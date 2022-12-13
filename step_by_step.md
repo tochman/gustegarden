@@ -15,3 +15,30 @@ Since I had an original folder named `gustegarden`, I had to move all files from
 ```
 $ mv gustegarden/* .
 ```
+
+# Cleaning
+
+I removed `App.css` and `index.css`. Also, I cleande up the `App.jsx` and `main.jsx` 
+
+```js
+//App.jsx
+const App = () => {
+  return (
+    <div>Gustegården</div>
+  )
+}
+export default App
+```
+
+```js
+//main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
+```
