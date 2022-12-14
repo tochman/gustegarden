@@ -1,9 +1,9 @@
-import { Heading } from "@chakra-ui/react"
+import { Heading } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
 const App = () => {
-  return (
-    <Heading>Gustegården</Heading>
-  )
-}
+  const { title } = useSelector((state) => state.application);
+  return <Heading>{title}</Heading>;
+};
 
-export default App
+export default App;

@@ -103,8 +103,87 @@ Decisions have to be made, and I will go with setting up both of these libaries.
 I will use [Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started) for my application state. 
 
 ```
-$ yarn add @reduxjs/toolkit
+$ yarn add @reduxjs/toolkit react-redux
 ```
+
+Create a `src/state/store.js` file. I will make use of `configureStore` - a module that wraps createStore to provide simplified configuration options and defaults.
+
+```js
+import { configureStore } from "@reduxjs/toolkit";
+export const store = configureStore({
+  reducer: {},
+});
+```
+
+Next step is to make it available to our React components by putting a React-Redux `<Provider>` around the application in `src/main.js`. This is what it looks now: 
+
+```js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { ChakraProvider } from "@chakra-ui/react";
+import { store } from "./state/store";
+import { Provider } from "react-redux";
+ReactDOM.createRoot(document.getElementById("root")).render(
+  // <React.StrictMode>
+  <ChakraProvider>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ChakraProvider>
+  // </React.StrictMode>,
+);
+```
+
+This is the first visit to Redux set-up, and the only data I will be storing in application state for now, is tha application name/title: "Gustegården".
+
+I will make use of `createSlice` module thast accepts an object of reducer functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action creators and action types.
+
+I will create a subfolder to the `state` folder titles `application`, and create a file named `applicationSlice.js`. This might be a bit of an overkill, since I will not be making use of any actions at this pont (feature creep?!?), but my experience with the Toolkit is limited at this point, and I choose to take a short cut.
+
+```js
+//state/application.applicationSlice.js
+import { createSlice } from '@reduxjs/toolkit'
+const initialState = {
+  title: 'GUSTEGÅRDEN',
+}
+export const applicationSlice = createSlice({
+  name: 'application',
+  initialState,
+  reducers: {}
+})
+
+export default applicationSlice.reducer
+```
+
+In the `store.js`, I nned to make use of the reducer (see the default export in the slice):
+
+```js
+//state/store.js
+import { configureStore } from "@reduxjs/toolkit";
+import applicationReducer from "./application/applicationSlice";
+export const store = configureStore({
+  reducer: { application: applicationReducer },
+});
+```
+
+At this stage, I should be able to use the `useSelector` function from `react-redux` and subscribe to the `apllication.title` value: 
+
+```js
+//App.jsx
+import { Heading } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
+
+const App = () => {
+  const { title } = useSelector((state) => state.application);
+  return <Heading>{title}</Heading>;
+};
+
+export default App;
+```
+That allows me to display the application title, and later on, I I choose to do so, add some other meta data.
+
+
 
 
 
