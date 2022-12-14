@@ -92,3 +92,19 @@ At this stage, I want to fire up the application and see if I'm on the right tra
 $ yarn dev
 ```
 
+# First feature creep? 
+
+I know that I eventually will need several views to disply all data related to the features I want to implement. When that happends, I will have to make use of React Router. I also like to keep as much data in application state, rather than keeping track of all state in individual components (unless it its really weird to use application state for something), so I will need Redux. Now, tha way I see it, I want to set up Redux, fairly fast (I consider it a part of the general set-up process), but hold off with React Router, until I start using it. Or at least, that is how I generally do. But perhaps I should consider routing as part of the set-up as well? 
+
+Decisions have to be made, and I will go with setting up both of these libaries. 
+
+# Application state
+
+I will use [Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started) for my application state. 
+
+```
+$ yarn add @reduxjs/toolkit
+```
+
+
+
