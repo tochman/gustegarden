@@ -257,6 +257,8 @@ export default App;
 
 At this point, I'm back with the same view I had before, but making use of routing. 
 
+# End of part 1
+At this point, my setup of the application structure is pretty much done. There are a few other issues outstanding, but it will do for now.
 
 
 
