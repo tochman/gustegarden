@@ -183,6 +183,83 @@ export default App;
 ```
 That allows me to display the application title, and later on, I I choose to do so, add some other meta data.
 
+# React router
+
+First, I install the package: 
+```
+$ yarn add react-router-dom
+```
+...and imort the `<BrowserRouter>` to my `main.js` wrapping the `<App>` component.
+
+```js
+//main.jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { ChakraProvider } from "@chakra-ui/react";
+import { store } from "./state/store";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+
+window.store = store;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  // <React.StrictMode>
+  <ChakraProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </ChakraProvider>
+  // </React.StrictMode>,
+);
+```
+
+I will extract the UI that lives in `App.jsx` to a separate component that I will call `MainView` I want to group my components in a separate folder, so I go ahead and create a folder for that. 
+
+```
+$ mkdir src/components
+$ touch src/components/MainView.jsx
+```
+
+The UI is basically a copy of what I had in `App.jsx`:
+
+```js
+import { Heading } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
+
+const MainView = () => {
+  const { title } = useSelector((state) => state.application);
+  return <Heading>{title}</Heading>;
+};
+
+export default MainView;
+```
+
+Now, my `App.jsx` need to undergo some changes. I will remove all UI elements (for now) and set up the routing (with only one route):
+
+```js
+//App.jsx
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import MainView from "./components/MainView";
+
+const App = () => {
+  return (
+    <Routes>
+      <Route path={"/"} element={<MainView />} />
+    </Routes>
+  );
+};
+
+export default App;
+```
+
+At this point, I'm back with the same view I had before, but making use of routing. 
+
+
+
+
 
 
 
