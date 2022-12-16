@@ -255,10 +255,80 @@ const App = () => {
 export default App;
 ```
 
-At this point, I'm back with the same view I had before, but making use of routing. 
+At this point, I'm back with the same view I had before, but making use of routing.
+
+# Testing
+
+I will use Cypress to write acceptance tests (or E2E tests if you prefer to cal them that). 
+
+```
+$ yarn add cypress start-server-and-test --dev
+```
+
+continue the setup by running Cypress: 
+
+```
+$ yarn run cypress open
+```
+
+At theis stage I will b e presented with some options on-screen that I will need to answer. Once htat is compleate, I want to go ahead and close Cypress for now, and do some manual configuration.
+
+There is a new file in the root folder titled `cypress.config.js`. I that file, I want to add some settings that I like for Cypress: 
+
+```js
+import { defineConfig } from "cypress";
+
+export default defineConfig({
+  e2e: {
+    baseUrl: "http://localhost:5173",
+    chromeWebSecurity: false,
+    video: false,
+    retries: 1,
+    screenshotOnRunFailure: false,
+    supportFile: 'cypress/support/e2e.js',
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+});
+```
+
+I also want to add some scripts to my `package.json`:
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "cy:open": "cypress open --e2e -b chrome",
+  "cy:run": "cypress run --e2e -b chrome",
+  "cypress": "start-test dev 5173 cy:open",
+  "cypress:ci": "start-test dev 5173 cy:run",
+},
+```
+
+As the next step, I want to write a simple test to check for the application title. 
+
+```js
+//cypress/e2e/applkicationStructure.cy.js
+describe('Application', () => {
+  it('is expected to display title', () => {
+    cy.visit('/')
+    cy.get('body').should('contain.text', 'GUSTEGÅRDEN')
+  })
+})
+```
+
+I can now run this spec by issuing the following command:
+
+```
+$ yarn cypress
+```
+We should go all green. 
 
 # End of part 1
 At this point, my setup of the application structure is pretty much done. There are a few other issues outstanding, but it will do for now.
+
 
 
 
