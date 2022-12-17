@@ -181,7 +181,7 @@ const App = () => {
 
 export default App;
 ```
-That allows me to display the application title, and later on, I I choose to do so, add some other meta data.
+That allows me to display the application title, and later on, if I choose to do so, add some other meta data.
 
 # React router
 
