@@ -1,6 +1,8 @@
-describe('Application', () => {
-  it('is expected to display title', () => {
-    cy.visit('/')
-    cy.get('body').should('contain.text', 'GUSTEGÅRDEN')
-  })
-})
+describe("Application", () => {
+  before(() => {
+    cy.visit("/");
+  });
+  it("is expected to display title", () => {
+    cy.getElement('title').should("contain.text", "GUSTEGÅRDEN");
+  });
+});
