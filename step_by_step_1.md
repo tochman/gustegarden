@@ -189,7 +189,7 @@ First, I install the package:
 ```
 $ yarn add react-router-dom
 ```
-...and imort the `<BrowserRouter>` to my `main.js` wrapping the `<App>` component.
+...and import the `<BrowserRouter>` to my `main.js` wrapping the `<App>` component.
 
 ```js
 //main.jsx

@@ -34,3 +34,26 @@ Cypress.Commands.add("getElement", (identifier) => {
   cy.get(`[data-cy=${identifier}]`);
 });
 ```
+
+# Header
+
+I create a simple logotype file in Adobe Illustrator. It is text based with a 21 degree arch. Before I export it as a SVG, I make sure to "expand appearance" of the object - this is necessary for a proper svg-export from the Illustrator application and beyond the scope of this walk-through. As the next step, I make sure to include the svg-file in my project forlder under `src/assets`. Next, I create a component for the logotype in a folder where I like to keep components that might be reused throughout the application. I usually call that folder `elements`:
+
+```js
+//elements/Logo.jsx
+import { Image } from "@chakra-ui/react";
+import logo from "../../assets/gustegarden_small.svg";
+
+const Logo = () => {
+  return (
+    <Image
+      htmlWidth={"210px"}
+      htmlHeight={"auto"}
+      src={logo}
+      style={{ cursor: "pointer" }}
+    />
+  );
+};
+
+export default Logo;
+```
