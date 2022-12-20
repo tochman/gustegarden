@@ -35,7 +35,7 @@ Cypress.Commands.add("getElement", (identifier) => {
 });
 ```
 
-# Header
+# Header & Footer
 
 I create a simple logotype file in Adobe Illustrator. It is text based with a 21 degree arch. Before I export it as a SVG, I make sure to "expand appearance" of the object - this is necessary for a proper svg-export from the Illustrator application and beyond the scope of this walk-through. As the next step, I make sure to include the svg-file in my project forlder under `src/assets`. Next, I create a component for the logotype in a folder where I like to keep components that might be reused throughout the application. I usually call that folder `elements`:
 
@@ -57,3 +57,60 @@ const Logo = () => {
 
 export default Logo;
 ```
+
+Now, for the `Header` component, I'll goo ahead and create a subfolder on its own, and go ahead and store that particular component in that folder. The reason is that I know for a fact, that I will be creating more components that will be closely related to the user interface in the header section, and I wish to separate them from the other component. One could say that I want to group my components "by topic" (or "by concern"). Anyway, here's my simple `<Header />` component:
+
+```js
+//header/Header.jsx
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import Logo from "../elements/Logo";
+
+const Header = () => {
+  return (
+    <Box bg={useColorModeValue("gray.50")} px={4} data-cy="header">
+      <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+        <Box>
+          <Logo />
+        </Box>
+      </Flex>
+    </Box>
+  );
+};
+
+export default Header;
+```
+
+_Note: I could have used `Header` as tha folder name, and `index.jsx` as the file name. This is a practice I sometimes use in projects. But I recon that it messes up my intelisens completions and imports._
+
+A similar sprocess is made for the footer section:
+
+```js
+//footer/Footer.jsx
+import { Box, Container, Text, useColorModeValue } from "@chakra-ui/react";
+
+const Footer = () => {
+  return (
+    <Box
+      data-cy="footer"
+      pos="fixed"
+      bottom="0"
+      left="0"
+      width={"100vw"}
+      bg={useColorModeValue("gray.50")}
+    >
+      <Container
+        maxW={"8xl"}
+        py={4}
+        justify={{ base: "center", md: "center" }}
+        align={{ base: "center", md: "center" }}
+      >
+        {" "}
+        <Text>Footer</Text>
+      </Container>
+    </Box>
+  );
+};
+
+export default Footer;
+```
+
