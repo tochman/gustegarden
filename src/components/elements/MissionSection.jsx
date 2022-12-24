@@ -6,7 +6,6 @@ import {
   Image,
   Skeleton,
   Box,
-  Divider,
 } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 import { useRef } from "react";

@@ -2,7 +2,7 @@ import { Text } from "@chakra-ui/layout";
 const Content = ({ children, ...props }) => {
   return (
     <Text
-      fontSize="ld"
+      fontSize={props.size || "ld"}
       textAlign="left"
       lineHeight="1.375"
       fontWeight="300"

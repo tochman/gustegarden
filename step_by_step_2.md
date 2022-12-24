@@ -176,3 +176,107 @@ export default HeroSection;
 
 This element makes use of ChakraUI. Nothing extraorinary.
 
+# Cookie consent.
+
+For the GDPR compiance, I will be using the [useCookieConsent hook for React.js](https://github.com/use-cookie-consent/use-cookie-consent-react) library. It is my first time, but it is headles (no UI components that are forced on me) and seems to give me enough flexibility to use whatever UI I want. 
+
+```
+$ yarn add @use-cookie-consent/react
+```
+
+Making it available throughout my application by wrapping the `App` component with a provider: 
+
+```js
+//main.js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { ChakraProvider } from "@chakra-ui/react";
+import { store } from "./state/store";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { CookieConsentProvider } from '@use-cookie-consent/react'
+
+window.store = store;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  // <React.StrictMode>
+  <ChakraProvider>
+    <Provider store={store}>
+      <CookieConsentProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+      </CookieConsentProvider>
+    </Provider>
+  </ChakraProvider>
+  // </React.StrictMode>,
+);
+
+```
+
+I will create a banner to be displayed to the user:
+
+```js
+//elements/CookieBanner.jsx
+import { useCookieConsentContext } from "@use-cookie-consent/react";
+
+const CookieBanner = () => {
+  const { acceptAllCookies, declineAllCookies, acceptCookies } =
+    useCookieConsentContext();
+
+  return (
+    <div>
+      <button onClick={acceptAllCookies}>Accept all</button>
+      <button onClick={() => acceptCookies({ thirdParty: true })}>
+        Accept third-party
+      </button>
+      <button onClick={() => acceptCookies({ firstParty: true })}>
+        Accept first-party
+      </button>
+      <button onClick={declineAllCookies}>Reject all</button>
+    </div>
+  );
+};
+
+export default CookieBanner;
+
+```
+
+And display it in the Footer if needed: 
+
+```js
+//elements/Footer.jsx
+import { Box, Container, Text, useColorModeValue } from "@chakra-ui/react";
+import { useCookieConsentContext } from "@use-cookie-consent/react";
+import CookieBanner from "../elements/CookieBanner";
+const Footer = () => {
+  const { consent } = useCookieConsentContext();
+  return (
+    <Box
+      data-cy="footer"
+      pos="fixed"
+      bottom="0"
+      left="0"
+      width={"100vw"}
+      bg={useColorModeValue("gray.50")}
+    >
+      <Container
+        maxW={"8xl"}
+        py={4}
+        justify={{ base: "center", md: "center" }}
+        align={{ base: "center", md: "center" }}
+      >
+        {!consent.persistent && <CookieBanner />}
+        <Text>Footer</Text>
+      </Container>
+    </Box>
+  );
+};
+
+export default Footer;
+```
+
+That is the first iteration
+
+
+
