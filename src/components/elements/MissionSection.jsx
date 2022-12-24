@@ -24,23 +24,24 @@ const MissionSection = () => {
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="center"
+          padding={2}
         >
           <Box mr={{ base: 0, md: 5 }} pos="relative">
             <Image
               boxShadow="lg"
+              padding={2}
               w="100%"
               h="100%"
               minW={{ base: "auto", md: "30rem" }}
               maxH="20rem"
               objectFit="cover"
               src={image}
-              rounded="md"
               fallback={<Skeleton />}
             />
           </Box>
           <Stack direction="column" spacing={6} justifyContent="center">
             <Heading size={"lg"}>Bra produkter till ett bra pris</Heading>
-            <Box>
+            <Box >
               <Content>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Numquam aliquam enim ipsa nesciunt, odio, in suscipit
@@ -57,15 +58,15 @@ const MissionSection = () => {
           </Stack>
         </Stack>
       </Fade>
-      <Divider m={"20px"} />
+      <Box minHeight={'10px'} margin={"10px"} />
       <Fade in={isInView} offsetY="20px" delay={0.2}>
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="center"
         >
-          <Stack direction="column" spacing={6} justifyContent="center">
+          <Stack direction="column" spacing={6} justifyContent="center" padding={2}>
             <Heading size={"lg"}>Glada djur är karma</Heading>
-            <Box>
+            <Box >
               <Content>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Numquam aliquam enim ipsa nesciunt, odio, in suscipit
@@ -85,15 +86,17 @@ const MissionSection = () => {
               boxShadow="lg"
               w="100%"
               h="100%"
+              padding={2}
               minW={{ base: "auto", md: "30rem" }}
               maxH="20rem"
               objectFit="cover"
               src={image_2}
-              rounded="md"
               fallback={<Skeleton />}
             />
           </Box>
         </Stack>
+        <Box minHeight={'10px'} margin={"20px"} />
+
       </Fade>
     </Container>
   );
