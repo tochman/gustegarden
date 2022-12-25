@@ -227,12 +227,6 @@ const CookieBanner = () => {
   return (
     <div>
       <button onClick={acceptAllCookies}>Accept all</button>
-      <button onClick={() => acceptCookies({ thirdParty: true })}>
-        Accept third-party
-      </button>
-      <button onClick={() => acceptCookies({ firstParty: true })}>
-        Accept first-party
-      </button>
       <button onClick={declineAllCookies}>Reject all</button>
     </div>
   );
@@ -252,31 +246,114 @@ import CookieBanner from "../elements/CookieBanner";
 const Footer = () => {
   const { consent } = useCookieConsentContext();
   return (
-    <Box
-      data-cy="footer"
-      pos="fixed"
-      bottom="0"
-      left="0"
-      width={"100vw"}
-      bg={useColorModeValue("gray.50")}
-    >
-      <Container
-        maxW={"8xl"}
-        py={4}
-        justify={{ base: "center", md: "center" }}
-        align={{ base: "center", md: "center" }}
+    <>
+      <Box
+        data-cy="footer"
+        pos="fixed"
+        bottom="0"
+        left="0"
+        width={"100vw"}
+        bg={useColorModeValue("gray.50")}
       >
         {!consent.persistent && <CookieBanner />}
-        <Text>Footer</Text>
-      </Container>
-    </Box>
+        <Container
+          maxW={"8xl"}
+          py={4}
+          justify={{ base: "center", md: "center" }}
+          align={{ base: "center", md: "center" }}
+        >
+          <Text>Footer</Text>
+        </Container>
+      </Box>
+    </>
+  );
+};
+```
+
+That is the first iteration. In order to make it looke more in line with the application as a whole, I can make use of some Chakra UI components: 
+
+```js
+//elements/CookieBanner.jsx
+import {
+  Button,
+  Stack,
+  Heading,
+  Box,
+  Alert,
+  AlertIcon,
+} from "@chakra-ui/react";
+import { useCookieConsentContext } from "@use-cookie-consent/react";
+import Content from "./Content"; // I created this one a while back
+
+const CookieBanner = () => {
+  const { acceptAllCookies, declineAllCookies, acceptCookies } =
+    useCookieConsentContext();
+
+  return (
+    <Alert>
+      <AlertIcon />
+      <Stack spacing={2} direction="row">
+        <Box>
+          <Heading size={"md"}>Vi bryr oss om din integritet</Heading>
+          <Content size="sm">
+            Genom att klicka på "acceptera alla cookies" samtycker du till
+            lagring av cookies på din enhet för att förbättra navigeringen på
+            webbplatsen, analysera webbplatsens användning och bistå i våra
+            marknadsföringsinsatser.{" "}
+          </Content>
+        </Box>
+        <Stack>
+          <Button
+            size={"sm"}
+            colorScheme="orange"
+            variant="solid"
+            onClick={acceptAllCookies}
+          >
+            Acceptera alla
+          </Button>
+          <Button
+            size={"sm"}
+            colorScheme="orange"
+            variant="outline"
+            onClick={declineAllCookies}
+          >
+            Avvisa alla
+          </Button>
+        </Stack>
+      </Stack>
+    </Alert>
   );
 };
 
-export default Footer;
+export default CookieBanner;
 ```
 
-That is the first iteration
+The `<Content>` compoonent is a custom `<Text>` component that I created: 
+
+```js
+//elements/Content.jsx
+import { Text } from "@chakra-ui/layout";
+const Content = ({ children, ...props }) => {
+  return (
+    <Text
+      fontSize={props.size || "ld"}
+      textAlign="left"
+      lineHeight="1.375"
+      fontWeight="300"
+      color="gray.500"
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
+export default Content;
+```
+
+I will probably modify it some more later on...
+
+
 
 
 
