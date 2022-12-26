@@ -1,9 +1,9 @@
 describe("Application", () => {
   beforeEach(() => {
-    cy.rejectAllGDPR();
+    cy.acceptAllGDPR();
     cy.visit("/");
   });
-  it.only("is expected to display application title", () => {
+  it("is expected to display application title", () => {
     cy.getElement("title").should("contain.text", "GUSTEGÅRDEN");
   });
 

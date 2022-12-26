@@ -14,7 +14,7 @@ const CookieBanner = () => {
     useCookieConsentContext();
 
   return (
-    <Alert>
+    <Alert data-cy='cookie-banner'>
       <AlertIcon />
       <Stack spacing={2} direction="row">
         <Box>
