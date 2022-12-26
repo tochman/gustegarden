@@ -20,7 +20,7 @@ const CookieBanner = () => {
         <Box>
           <Heading size={"md"}>Vi bryr oss om din integritet</Heading>
           <Content size="sm">
-            Genom att klicka på "acceptera alla cookies" samtycker du till
+            Genom att klicka på "Acceptera alla" samtycker du till
             lagring av cookies på din enhet för att förbättra navigeringen på
             webbplatsen, analysera webbplatsens användning och bistå i våra
             marknadsföringsinsatser.{" "}

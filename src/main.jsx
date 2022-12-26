@@ -6,6 +6,7 @@ import { store } from "./state/store";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { CookieConsentProvider } from '@use-cookie-consent/react'
+import './index.css'
 
 window.store = store;
 ReactDOM.createRoot(document.getElementById("root")).render(
