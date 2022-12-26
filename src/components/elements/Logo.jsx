@@ -1,13 +1,14 @@
 import { Image } from "@chakra-ui/react";
 import logo from "../../assets/gustegarden_small.svg";
 
-const Logo = () => {
+const Logo = (props) => {
   return (
     <Image
-      htmlWidth={"210px"}
+      htmlWidth={props.width || "210px"}
       htmlHeight={"auto"}
       src={logo}
       style={{ cursor: "pointer" }}
+      m={1}
     />
   );
 };

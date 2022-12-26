@@ -1,6 +1,7 @@
 import { Box, Container, Text, useColorModeValue } from "@chakra-ui/react";
 import { useCookieConsentContext } from "@use-cookie-consent/react";
 import CookieBanner from "../elements/CookieBanner";
+import Logo from "../elements/Logo";
 const Footer = () => {
   const { consent } = useCookieConsentContext();
   return (
@@ -20,7 +21,7 @@ const Footer = () => {
           justify={{ base: "center", md: "center" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>Footer</Text>
+           <Logo width="100px"/>
         </Container>
       </Box>
     </>

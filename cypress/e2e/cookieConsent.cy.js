@@ -1,5 +1,6 @@
 describe('Cookie Consent', () => {
   beforeEach(() => {
+    // cy.viewport('iphone-x')
     cy.rejectAllGDPR()
     cy.visit('/')
   });

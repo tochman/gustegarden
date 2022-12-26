@@ -16,7 +16,7 @@ const CookieBanner = () => {
   return (
     <Alert data-cy='cookie-banner'>
       <AlertIcon />
-      <Stack spacing={2} direction="row">
+      <Stack spacing={2} direction={{ base: "column", md: "row" }}>
         <Box>
           <Heading size={"md"}>Vi bryr oss om din integritet</Heading>
           <Content size="sm">
@@ -26,7 +26,7 @@ const CookieBanner = () => {
             marknadsföringsinsatser.{" "}
           </Content>
         </Box>
-        <Stack>
+        <Stack direction={{ base: "row", md: "column" }} spacing={{base: 1, sm: 4, md: 1}}>
           <Button
             size={"sm"}
             colorScheme="orange"
