@@ -3,10 +3,14 @@ describe("Application", () => {
     cy.acceptAllGDPR();
     cy.visit("/");
   });
-  it("is expected to display application title", () => {
-    cy.getElement("title").should("contain.text", "GUSTEGÅRDEN");
+  it("is expected to display application header", () => {
+    cy.getElement("title").should("contain.text", "Småskaligt - djur och människor i balans");
   });
 
+  it("is expected to display the page title", () => {
+    cy.title().should("eql", "Gustegården - Småskalig jordbruk");
+  });
+  
   describe("header section", () => {
     it("is expected to exist", () => {
       cy.getElement("header").should("be.visible");

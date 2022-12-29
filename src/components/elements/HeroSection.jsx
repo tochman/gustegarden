@@ -31,7 +31,7 @@ const HeroSection = () => {
             lineHeight={1.2}
             fontSize={useBreakpointValue({ base: "3xl", md: "4xl" })}
           >
-            GUSTEGÅRDEN - Djur och människor i balans
+            Småskaligt - djur och människor i balans
           </Text>
           <Stack direction={"row"}>
             <Button

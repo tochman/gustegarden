@@ -353,6 +353,17 @@ export default Content;
 
 I will probably modify it some more later on...
 
+# Custom titles on views/routes
+
+(React Helmet)[https://www.npmjs.com/package/react-helmet] is a reusable React component will help me to manage all changes to the document head. At this point I will be using it to change the view titles on my application's views. (This is a bit premature becouse I only have one path in my application at this stage)
+
+```
+$ yarn add react-helmet
+```
+
+
+
+
 
 
 

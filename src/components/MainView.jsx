@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux";
 import HeroSection from "./elements/HeroSection";
 import MissionSection from "./elements/MissionSection";
-
-HeroSection;
+import { Helmet } from "react-helmet";
 
 const MainView = () => {
-  const { title } = useSelector((state) => state.application);
   return (
     <>
+      <Helmet>
+        <title>Gustegården - Småskalig jordbruk</title>
+      </Helmet>
       <HeroSection />
       <MissionSection />
     </>
