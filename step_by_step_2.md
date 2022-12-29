@@ -361,6 +361,38 @@ I will probably modify it some more later on...
 $ yarn add react-helmet
 ```
 
+Then, in every view where you need a custom docuent title (or modify the `<head>` section of the DOM bu adding `<meta>`-tags or css links), I need to import the `Helmet` module. 
+
+For example: 
+
+```js
+import HeroSection from "./elements/HeroSection";
+import MissionSection from "./elements/MissionSection";
+import { Helmet } from "react-helmet";
+
+const MainView = () => {
+  return (
+    <>
+      <Helmet>
+        <title>Gustegården - Småskalig jordbruk</title>
+      </Helmet>
+      <HeroSection />
+      <MissionSection />
+    </>
+  );
+};
+
+export default MainView;
+```
+
+I can test this using Cypress: 
+
+```js
+it("is expected to display the page title", () => {
+  cy.title().should("eql", "Gustegården - Småskalig jordbruk");
+});
+```
+
 
 
 
