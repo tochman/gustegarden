@@ -39,7 +39,7 @@ const MissionSection = () => {
             />
           </Box>
           <Stack direction="column" spacing={6} justifyContent="center">
-            <Heading size={"lg"}>Bra produkter till ett bra pris</Heading>
+            <Heading size={"lg"}>Våra djur</Heading>
             <Box >
               <Content>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -64,7 +64,7 @@ const MissionSection = () => {
           justifyContent="center"
         >
           <Stack direction="column" spacing={6} justifyContent="center" padding={2}>
-            <Heading size={"lg"}>Glada djur är karma</Heading>
+            <Heading size={"lg"}>Produkter</Heading>
             <Box >
               <Content>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
