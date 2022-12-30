@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <Flex
       w={"full"}
-      h={"100vh"}
+      h={"50vh"}
       backgroundImage={image}
       backgroundSize={"cover"}
       backgroundPosition={"center center"}
@@ -34,14 +34,14 @@ const HeroSection = () => {
             Småskaligt - djur och människor i balans
           </Text>
           <Stack direction={"row"}>
-            <Button
+            {/* <Button
               bg={"blue.400"}
               rounded={"md"}
               color={"white"}
               _hover={{ bg: "blue.500" }}
             >
               Produkter
-            </Button>
+            </Button> */}
             
           </Stack>
         </Stack>
