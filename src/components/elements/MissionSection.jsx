@@ -10,13 +10,12 @@ import {
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Content from "./Content";
-import image from "../../assets/farm_view.jpg";
+import image from "../../assets/sheep_group_closeup.jpg";
 import image_2 from "../../assets/sheep_closeup.jpg"
 
 const MissionSection = () => {
   const content = useRef(null);
   const isInView = useInView(content);
-  console.log(isInView);
   return (
     <Container maxW="6xl" px={{ base: 6, md: 3 }} py={14}>
       <Fade ref={content} in={isInView} offsetY="20px" delay={0.2}>

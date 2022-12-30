@@ -13,6 +13,7 @@ const HeroSection = () => {
     <Flex
       w={"full"}
       h={"50vh"}
+      marginTop={'72.8px'}
       backgroundImage={image}
       backgroundSize={"cover"}
       backgroundPosition={"center center"}
