@@ -10,8 +10,8 @@ import {
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Content from "./Content";
-import image from "../../assets/sheep_group_closeup.jpg";
-import image_2 from "../../assets/sheep_closeup.jpg"
+import image from "../../assets/farm_view.jpg";
+import image_2 from "../../assets/sheep_closeup.jpg";
 
 const MissionSection = () => {
   const content = useRef(null);
@@ -38,45 +38,55 @@ const MissionSection = () => {
             />
           </Box>
           <Stack direction="column" spacing={6} justifyContent="center">
-            <Heading size={"lg"}>Våra djur</Heading>
-            <Box >
+            <Heading mt={"-10px"} size={"lg"}>
+              Gustegården
+            </Heading>
+            <Box>
               <Content>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Numquam aliquam enim ipsa nesciunt, odio, in suscipit
-                repudiandae inventore ab sint sed dignissimos, laudantium eos
-                modi aperiam repellat eveniet labore commodi!
+                På Gustegården håller vi getter och får. Namnet kommer från den
+                storgård som en gång i tiden låg på den mark vi arrenderar.
               </Content>
               <Content mt={4}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-                quidem quod laborum dolores unde ex dolor atque, ea laboriosam.
-                Placeat aspernatur veniam ducimus mollitia dolore labore non
-                adipisci accusantium inventore.
+                Under September 2022 skrev vi ett avtal med nuvarande
+                arrendatorn och redan samma månad kunde våra första djur flytta
+                in.
+              </Content>
+              <Content mt={4}>
+                Det här är vår hobby och arbetet kännetecknas av omtanke om
+                djuren, engagemang för hållbarhet och intresse att kontinuerligt
+                lära sig mer om djurhållning.
               </Content>
             </Box>
           </Stack>
         </Stack>
       </Fade>
-      <Box minHeight={'10px'} margin={"10px"} />
+      <Box minHeight={"10px"} margin={"10px"} />
       <Fade in={isInView} offsetY="20px" delay={0.2}>
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="center"
         >
-          <Stack direction="column" spacing={6} justifyContent="center" padding={2}>
-            <Heading size={"lg"}>Produkter</Heading>
-            <Box >
+          <Stack
+            direction="column"
+            spacing={6}
+            justifyContent="center"
+            padding={2}
+            ml={2}
+          >
+            <Heading size={"lg"}>Våra djur</Heading>
+            <Box>
               <Content>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Numquam aliquam enim ipsa nesciunt, odio, in suscipit
-                repudiandae inventore ab sint sed dignissimos, laudantium eos
-                modi aperiam repellat eveniet labore commodi!
+                Vår besättning består av 8 st gutefår. Vi har 7 stycken härliga
+                tackor och en fantastisk bagge. Baggen heter Urban och bland
+                tackorna finns Ulla, Ursula, Maja, Aurora, Stina, Popeye, och
+                Mona Lisa.
               </Content>
               <Content mt={4}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
                 quidem quod laborum dolores unde ex dolor atque, ea laboriosam.
                 Placeat aspernatur veniam ducimus mollitia dolore labore non
                 adipisci accusantium inventore.
-              </Content>         
+              </Content>
             </Box>
           </Stack>
           <Box mr={{ base: 0, md: 5 }} pos="relative">
@@ -93,8 +103,7 @@ const MissionSection = () => {
             />
           </Box>
         </Stack>
-        <Box minHeight={'10px'} margin={"20px"} />
-
+        <Box minHeight={"10px"} margin={"20px"} />
       </Fade>
     </Container>
   );
