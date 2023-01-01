@@ -73,19 +73,20 @@ const MissionSection = () => {
             padding={2}
             ml={2}
           >
-            <Heading size={"lg"}>Våra djur</Heading>
+            <Heading size={"lg"}>Gutefår</Heading>
             <Box>
               <Content>
-                Vår besättning består av 8 st gutefår. Vi har 7 stycken härliga
-                tackor och en fantastisk bagge. Baggen heter Urban och bland
-                tackorna finns Ulla, Ursula, Maja, Aurora, Stina, Popeye, och
-                Mona Lisa.
+                Vår fårbesättning består av 8 st gutefår. Vi har 7 stycken
+                härliga tackor och en fantastisk bagge. Baggen heter Urban och
+                bland tackorna finns Ulla, Ursula, Maja, Aurora, Stina, Popeye,
+                och Mona Lisa.
               </Content>
               <Content mt={4}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-                quidem quod laborum dolores unde ex dolor atque, ea laboriosam.
-                Placeat aspernatur veniam ducimus mollitia dolore labore non
-                adipisci accusantium inventore.
+                Gutefåren ett härstammar från de gotländska utegångsfåren och är
+                en lantras med anor från flera tusen år tillbaka. På Gotland
+                kallas de traditionellt för hånnlambi (hornfår). Både baggar och
+                tackor har horn, men baggens horn är kraftigare än tackans.
+                Färgen på våra varierar i vitt, grått och svart.
               </Content>
             </Box>
           </Stack>
@@ -105,6 +106,47 @@ const MissionSection = () => {
         </Stack>
         <Box minHeight={"10px"} margin={"20px"} />
       </Fade>
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        justifyContent="center"
+        padding={2}
+      >
+        <Box mr={{ base: 0, md: 5 }} pos="relative">
+          <Image
+            boxShadow="lg"
+            padding={2}
+            w="100%"
+            h="100%"
+            minW={{ base: "auto", md: "30rem" }}
+            maxH="20rem"
+            objectFit="cover"
+            src={image}
+            fallback={<Skeleton />}
+          />
+        </Box>
+        <Stack direction="column" spacing={6} justifyContent="center">
+          <Heading mt={"-10px"} size={"lg"}>
+            Getter
+          </Heading>
+          <Box>
+            <Content>
+              Våra getter heter Chinook och Congo. Det är två Afrikanska
+              Dvärggetter som vi adopterade under November 2022. De har fått bo
+              bland andra getter på Björsjöbacka Gård under vintern 2022/23.
+            </Content>
+            <Content mt={4}>
+              Den Afrikanska Dvärggeten kommer ursprungligen från Norra Afrika.
+              Idag finns den i hela världen men lever även fritt i Afrika och
+              Asien.
+            </Content>
+            <Content mt={4}>
+              Det här är vår hobby och arbetet kännetecknas av omtanke om
+              djuren, engagemang för hållbarhet och intresse att kontinuerligt
+              lära sig mer om djurhållning.
+            </Content>
+          </Box>
+        </Stack>
+      </Stack>
     </Container>
   );
 };
