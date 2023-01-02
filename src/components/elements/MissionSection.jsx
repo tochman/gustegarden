@@ -1,5 +1,7 @@
 import {
   Fade,
+  SlideFade,
+  Slide,
   Heading,
   Container,
   Stack,
@@ -12,13 +14,22 @@ import { useRef } from "react";
 import Content from "./Content";
 import image from "../../assets/farm_view.jpg";
 import image_2 from "../../assets/sheep_closeup.jpg";
-
+import image_3 from "../../assets/goats_main_view.jpg";
 const MissionSection = () => {
-  const content = useRef(null);
-  const isInView = useInView(content);
+  const box1 = useRef(null);
+  const isInViewBox1 = useInView(box1, { once: true });
+  const box2 = useRef(null);
+  const isInViewBox2 = useInView(box2, { once: true });
+  const box3 = useRef(null);
+  const isInViewBox3 = useInView(box3, { once: true });
   return (
     <Container maxW="6xl" px={{ base: 6, md: 3 }} py={14}>
-      <Fade ref={content} in={isInView} offsetY="20px" delay={0.2}>
+      <SlideFade
+        ref={box1}
+        in={isInViewBox1}
+        offsetX="-200px"
+        delay={0.5}
+      >
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="center"
@@ -59,9 +70,14 @@ const MissionSection = () => {
             </Box>
           </Stack>
         </Stack>
-      </Fade>
+      </SlideFade>
       <Box minHeight={"10px"} margin={"10px"} />
-      <Fade in={isInView} offsetY="20px" delay={0.2}>
+      <SlideFade
+        ref={box2}
+        in={isInViewBox2}
+        offsetX="200px"
+        delay={0.5}
+      >
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="center"
@@ -105,48 +121,51 @@ const MissionSection = () => {
           </Box>
         </Stack>
         <Box minHeight={"10px"} margin={"20px"} />
-      </Fade>
-      <Stack
-        direction={{ base: "column", md: "row" }}
-        justifyContent="center"
-        padding={2}
+      </SlideFade>
+      <SlideFade
+        ref={box3}
+        in={isInViewBox3}
+        offsetX="-200px"
+        delay={0.5}
       >
-        <Box mr={{ base: 0, md: 5 }} pos="relative">
-          <Image
-            boxShadow="lg"
-            padding={2}
-            w="100%"
-            h="100%"
-            minW={{ base: "auto", md: "30rem" }}
-            maxH="20rem"
-            objectFit="cover"
-            src={image}
-            fallback={<Skeleton />}
-          />
-        </Box>
-        <Stack direction="column" spacing={6} justifyContent="center">
-          <Heading mt={"-10px"} size={"lg"}>
-            Getter
-          </Heading>
-          <Box>
-            <Content>
-              Våra getter heter Chinook och Congo. Det är två Afrikanska
-              Dvärggetter som vi adopterade under November 2022. De har fått bo
-              bland andra getter på Björsjöbacka Gård under vintern 2022/23.
-            </Content>
-            <Content mt={4}>
-              Den Afrikanska Dvärggeten kommer ursprungligen från Norra Afrika.
-              Idag finns den i hela världen men lever även fritt i Afrika och
-              Asien.
-            </Content>
-            <Content mt={4}>
-              Det här är vår hobby och arbetet kännetecknas av omtanke om
-              djuren, engagemang för hållbarhet och intresse att kontinuerligt
-              lära sig mer om djurhållning.
-            </Content>
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          justifyContent="center"
+          padding={2}
+        >
+          <Box mr={{ base: 0, md: 5 }} pos="relative">
+            <Image
+              boxShadow="lg"
+              padding={2}
+              w="100%"
+              h="100%"
+              minW={{ base: "auto", md: "30rem" }}
+              maxH="20rem"
+              objectFit="cover"
+              src={image_3}
+              fallback={<Skeleton />}
+            />
           </Box>
+          <Stack direction="column" spacing={6} justifyContent="center">
+            <Heading mt={"-10px"} size={"lg"}>
+              Getter
+            </Heading>
+            <Box>
+              <Content>
+                Våra getter heter Chinook och Congo. Det är två Afrikanska
+                Dvärggetter som vi adopterade under November 2022. De har fått
+                bo bland andra getter på Björsjöbacka Gård under vintern
+                2022/23.
+              </Content>
+              <Content mt={4}>
+                Den Afrikanska Dvärggeten kommer ursprungligen från Norra
+                Afrika. Idag finns den i hela världen men lever även fritt i
+                Afrika och Asien.
+              </Content>
+            </Box>
+          </Stack>
         </Stack>
-      </Stack>
+      </SlideFade>
     </Container>
   );
 };
