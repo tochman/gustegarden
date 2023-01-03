@@ -3,26 +3,3 @@
 body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Josefin Sans' !important;
 }
-
-.active{
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  transition: 0.3s linear;
-  background-color: #FFFFFF;
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
-  z-index: 40;
-  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08);
-  /* padding: 0 7%; */
-}
-.hidden{
-  width: 100%;
-  z-index: 40;
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
-  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08);
-  position: fixed;
-  top: -80px;
-  transition: 0.3s linear;
-  transition-delay: 0.5s;
-
-}

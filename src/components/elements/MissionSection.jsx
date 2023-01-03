@@ -1,7 +1,5 @@
 import {
-  Fade,
   SlideFade,
-  Slide,
   Heading,
   Container,
   Stack,
