@@ -47,7 +47,7 @@ const MissionSection = () => {
             />
           </Box>
           <Stack direction="column" spacing={6} justifyContent="center">
-            <Heading mt={"-10px"} size={"lg"}>
+            <Heading mt={{base: 0, lg: "-10px"}} size={"lg"}>
               Gustegården
             </Heading>
             <Box>
@@ -145,7 +145,7 @@ const MissionSection = () => {
             />
           </Box>
           <Stack direction="column" spacing={6} justifyContent="center">
-            <Heading mt={"-10px"} size={"lg"}>
+            <Heading mt={{base: 0, lg: "-10px"}} size={"lg"}>
               Getter
             </Heading>
             <Box>

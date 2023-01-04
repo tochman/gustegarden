@@ -119,7 +119,7 @@ const CaptionCarousel = () => {
               // backgroundPosition="center"
               backgroundRepeat="no-repeat"
               backgroundSize="contain"
-              bgImage={`linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.2)) , url(${card.image})`}
+              bgImage={`linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.2)), url(${card.image})`}
               // bgGradient='linear(to-t, black, white)'
             >
               {/* This is the block you need to change, to customize the caption */}
