@@ -5,14 +5,13 @@ import {
   useBreakpointValue,
   Stack,
   Heading,
-  Text,
   Container,
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
 import image_1 from "../../assets/sheep_1.jpg";
 import image_2 from "../../assets/sheep_maja.jpg";
-import image_3 from "../../assets/goats_main_view.jpg";
+import image_3 from "../../assets/goats_chinook.jpg";
 import { Helmet } from "react-helmet";
 
 // Settings for the slider
@@ -29,17 +28,9 @@ const settings = {
 };
 
 const CaptionCarousel = () => {
-  // As we have used custom buttons, we need a reference variable to
-  // change the state
   const [slider, setSlider] = useState(null);
-
-  // These are the breakpoints which changes the position of the
-  // buttons as the screen size changes
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
-
-  // This list contains all the data for carousels
-  // This can be static or loaded from a server
   const cards = [
     {
       title: "SMÅSKALIGHET",
@@ -79,7 +70,7 @@ const CaptionCarousel = () => {
       </Helmet>
       <Box
         position={"relative"}
-        height={"500px"}
+        height={"90vh"}
         width={"full"}
         overflow={"hidden"}
       >
@@ -118,8 +109,8 @@ const CaptionCarousel = () => {
               position="relative"
               // backgroundPosition="center"
               backgroundRepeat="no-repeat"
-              backgroundSize="contain"
-              bgImage={`linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.2)), url(${card.image})`}
+              backgroundSize="cover"
+              bgImage={`linear-gradient(rgba(255,255,255, 0.1), rgba(0, 0, 0, 0.1)), url(${card.image})`}
               // bgGradient='linear(to-t, black, white)'
             >
               {/* This is the block you need to change, to customize the caption */}
