@@ -58,8 +58,8 @@ const CallsToAction = () => {
       text: "Respektfullt och försiktig djurhållning innebär att vi tänker långsigtigt och tar vara på allt som våra djur producerar. Du kan ta del av det genom att köpa till exempel kött, fäll eller andra prodikter från oss. Varför inte pryda en myshörna eller din favoritfotölj med ett färfäll?  Titta i vår enkla webshop för inspiration. ",
     },
     {
-      title: "Besök oss",
-      text: "Våra djur är vana vid besökare och även om både fåren och getterna har horn, så är det tryggt att gå in i hagen och klappa dem. De gillar att kela och bli gosade med. ",
+      title: "Besök oss - på plats eller digitalt",
+      text: "Våra djur är vana vid besökare och även om både fåren och getterna har horn, så är det tryggt att gå in i hagen och klappa dem. De gillar att kela och bli gosade med. Vi har även en egen YouTube kanal där du kan följa vårt arbete med djuren.",
     },
   ];
   return (
