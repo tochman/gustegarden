@@ -139,7 +139,7 @@ export default function Simple() {
                 dig efter att vi har mottagit din beställning och bekräftat dina
                 uppgifter per mail. Om du till exempel vill ge bort ett
                 fadderskap i present skriver du det i meddelandefältet. Glöm
-                inte att ange storlek på t-shirt eller hoodie om du tecjnar dig
+                inte att ange storlek på t-shirt eller hoodie om du tecknar dig
                 för ett 6 eller 12-månaders fadderskap.
               </Text>
             </VStack>
