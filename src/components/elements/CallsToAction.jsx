@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 
 const Testimonial = ({ children }) => {
-  return <Box w={'33%'}>{children}</Box>;
+  return <Box w={{lg: '33%'}}>{children}</Box>;
 };
 
 const TestimonialContent = ({ children }) => {
@@ -73,8 +73,8 @@ const CallsToAction = () => {
           </Text>
         </Stack>
         <Stack
-          direction={{ base: "column", md: "row" }}
-          spacing={{ base: 10, md: 4, lg: 10 }}
+          direction={{ base: "column", sm: "row", md: "row", }}
+          spacing={{ base: 10, sm: 1, md: 4, lg: 10 }}
         >
           {cards.map((card, index) => (
             <Testimonial key={index}>
