@@ -6,26 +6,26 @@ import {
   VStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import image from "../../assets/sheep_1.jpg";
+import image from "../../assets/sheep_group_closeup.jpg";
 
 const HeroSection = () => {
   return (
     <Flex
       w={"full"}
       h={"50vh"}
-      marginTop={'72.8px'}
+      pl={1}
       backgroundImage={image}
       backgroundSize={"cover"}
       backgroundPosition={"center center"}
+      rounded={"md"}
     >
       <VStack
         w={"full"}
         justify={"center"}
         px={useBreakpointValue({ base: 4, md: 8 })}
-        bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
       >
         <Stack maxW={"2xl"} align={"flex-start"} spacing={6}>
-          <Text
+          {/* <Text
             data-cy="title"
             color={"white"}
             fontWeight={700}
@@ -33,7 +33,7 @@ const HeroSection = () => {
             fontSize={useBreakpointValue({ base: "3xl", md: "4xl" })}
           >
             Småskaligt - djur och människor i balans
-          </Text>
+          </Text> */}
           <Stack direction={"row"}>
             {/* <Button
               bg={"blue.400"}

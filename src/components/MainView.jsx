@@ -1,4 +1,4 @@
-import HeroSection from "./elements/HeroSection";
+import HeroSection from "./adoption/HeroSection";
 import MissionSection from "./elements/MissionSection";
 
 import { Helmet } from "react-helmet";
