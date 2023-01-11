@@ -5,11 +5,13 @@ import {
   Text,
   Stack,
   Container,
+  Button,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Testimonial = ({ children }) => {
-  return <Box w={{lg: '33%'}}>{children}</Box>;
+  return <Box w={{ lg: "33%" }}>{children}</Box>;
 };
 
 const TestimonialContent = ({ children }) => {
@@ -48,10 +50,12 @@ const TestimonialText = ({ children }) => {
 };
 
 const CallsToAction = () => {
+  const navigate = useNavigate();
   const cards = [
     {
       title: "Bli fadder",
-      text: "För oss betuder Djur och Människor i balans att vi försöker ge våra djur det allra bästa vi kan vad det gäller foder och miljö som de vistas i. Allt kostar dock, och även om vi är ekonomiska behörver vi ditt stöd. Läs mer om hur du kan bli fadder åt ett eller flera av våra får, getter eller katter. Pris från 175 kr per månad.",
+      text: "För oss betyder Djur och Människor i balans att vi försöker ge våra djur det allra bästa vi kan vad det gäller foder och miljö som de vistas i. Allt kostar dock, och även om vi är ekonomiska behörver vi ditt stöd. Läs mer om hur du kan bli fadder åt ett eller flera av våra får, getter eller katter. Pris från 175 kr per månad.",
+      target: "adoption",
     },
     {
       title: "Produkter",
@@ -73,7 +77,7 @@ const CallsToAction = () => {
           </Text>
         </Stack>
         <Stack
-          direction={{ base: "column", sm: "row", md: "row", }}
+          direction={{ base: "column", sm: "row", md: "row" }}
           spacing={{ base: 10, sm: 1, md: 4, lg: 10 }}
         >
           {cards.map((card, index) => (
@@ -81,6 +85,14 @@ const CallsToAction = () => {
               <TestimonialContent>
                 <TestimonialHeading>{card.title}</TestimonialHeading>
                 <TestimonialText>{card.text}</TestimonialText>
+                <Button
+                  onClick={() => {
+                    debugger;
+                    card.target && navigate(card.target);
+                  }}
+                >
+                  Läs mer
+                </Button>
               </TestimonialContent>
             </Testimonial>
           ))}
