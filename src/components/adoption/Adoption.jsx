@@ -1,10 +1,8 @@
 import {
   Box,
-  chakra,
   Container,
   Stack,
   Text,
-  Image,
   Flex,
   VStack,
   Button,
@@ -12,12 +10,9 @@ import {
   SimpleGrid,
   StackDivider,
   useColorModeValue,
-  VisuallyHidden,
   List,
   ListItem,
 } from "@chakra-ui/react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { MdLocalShipping } from "react-icons/md";
 import HeroSection from "./HeroSection";
 
 export default function Simple() {
@@ -64,10 +59,10 @@ export default function Simple() {
                 fontSize={"2xl"}
                 fontWeight={"300"}
               >
-                Genom att bli fadder åt ett av vår djur stöttar du oss i vårt
+                Genom att bli fadder åt ett av våra djur stöttar du oss i vårt
                 arbete och är med och betalar för foder, utrustning och allt
                 annat som behövs för att djuren skall kunna leva ett så
-                naturligt liv som möjligt.
+                naturligt och bra liv som möjligt.
               </Text>
               <Text fontSize={"lg"}>
                 Fadderskap kan tecknas från tre månader upp till ett helt år i
@@ -165,11 +160,6 @@ export default function Simple() {
           >
             BESTÄLL
           </Button>
-
-          <Stack direction="row" alignItems="center" justifyContent={"center"}>
-            <MdLocalShipping />
-            <Text>2-3 business days delivery</Text>
-          </Stack>
         </Stack>
       </SimpleGrid>
     </Container>
