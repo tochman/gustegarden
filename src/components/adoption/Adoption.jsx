@@ -62,10 +62,10 @@ export default function Simple() {
                 Genom att bli fadder åt ett av våra djur stöttar du oss i vårt
                 arbete och är med och betalar för foder, utrustning och allt
                 annat som behövs för att djuren skall kunna leva ett så
-                naturligt och bra liv som möjligt. Du förjer ditt fadderdjur på
-                distans men är även välkommen att besöka det på plats.
+                naturligt och bra liv som möjligt. Du följer ditt fadderdjur på
+                distans men är självklart även välkommen att besöka det på plats.
               </Text>
-              <Text fontSize={"lg"}>
+              <Text fontSize={"xl"}>
                 Fadderskap kan tecknas från tre månader upp till ett helt år i
                 taget och avser såväl vuxna tackor och baggar som lamm eller
                 killingar. Du erhåller ett fadderbevis med bild på ditt djur
