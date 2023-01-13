@@ -107,13 +107,11 @@ const CaptionCarousel = () => {
               key={index}
               height={"6xl"}
               position="relative"
-              // backgroundPosition="center"
+              backgroundPosition="center"
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
               bgImage={`linear-gradient(rgba(255,255,255, 0.1), rgba(0, 0, 0, 0.1)), url(${card.image})`}
-              // bgGradient='linear(to-t, black, white)'
             >
-              {/* This is the block you need to change, to customize the caption */}
               <Container size="container.lg" height="600px" position="relative">
                 <Stack
                   spacing={6}
@@ -131,8 +129,8 @@ const CaptionCarousel = () => {
                     {card.title}
                   </Heading>
                   <Heading
-                  as={'h4'}
-                  mt={'-15px'}
+                    as={"h4"}
+                    mt={"-15px"}
                     color={card.mode === "light" ? "black" : "white"}
                   >
                     {card.text}
