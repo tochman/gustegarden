@@ -62,7 +62,8 @@ export default function Simple() {
                 Genom att bli fadder åt ett av våra djur stöttar du oss i vårt
                 arbete och är med och betalar för foder, utrustning och allt
                 annat som behövs för att djuren skall kunna leva ett så
-                naturligt och bra liv som möjligt.
+                naturligt och bra liv som möjligt. Du förjer ditt fadderdjur på
+                distans men är även välkommen att besöka det på plats.
               </Text>
               <Text fontSize={"lg"}>
                 Fadderskap kan tecknas från tre månader upp till ett helt år i
@@ -70,8 +71,8 @@ export default function Simple() {
                 killingar. Du erhåller ett fadderbevis med bild på ditt djur
                 samt en beskrivning av dess utseende och karaktär. En gång i
                 månaden spelar vi in en kort video med en uppdatering om djuret
-                och skickar den i form av en privat YouTube länk (som du
-                dela med din famil och vänner).
+                och skickar den i form av en privat YouTube länk (som du dela
+                med din famil och vänner).
               </Text>
             </VStack>
             <Box>
