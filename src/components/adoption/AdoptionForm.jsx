@@ -42,11 +42,14 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               teckna dig för, så kontaktar vi dig snarast.
             </Text>
             <chakra.form
+              name="fadderprogram"
               id="adoption-form"
               data-netlify="true"
+              method="POST"
+              netlify-honeypot="bot-field" hidden
               onSubmit={handleSubmit(handleFormSubmission)}
             >
-              <input type="hidden" name="form-name" value="Fadderprogram" />
+              <input type="hidden" name="form-name" value="fadderprogram" />
               <FormControl isInvalid={errors.name}>
                 <FormLabel htmlFor="name">Ditt namn</FormLabel>
                 <Input
