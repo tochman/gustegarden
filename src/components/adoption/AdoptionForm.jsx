@@ -8,10 +8,27 @@ import {
   ModalCloseButton,
   Button,
   Text,
+  FormErrorMessage,
+  FormLabel,
+  FormControl,
+  Input,
+  chakra
 } from "@chakra-ui/react";
-import React from "react";
+import { useForm } from "react-hook-form";
 
 const AdoptionForm = ({ isOpen, setModalVisible }) => {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const handleFormSubmission = (data) => {
+    setModalVisible(false);
+    console.table(data);
+  };
+
+  const errorMessage = "Det här fältet är obligatoriskt"
   return (
     <>
       <Modal isOpen={isOpen} onClose={() => setModalVisible(false)}>
@@ -24,18 +41,40 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               Lämna dina uppgifter och önskemål om vilket fadderprogram du vill
               teckna dig för, så kontaktar vi dig snarast.
             </Text>
+            <chakra.form
+              id="adoption-form"
+              data-netlify="true"
+              onSubmit={handleSubmit(handleFormSubmission)}
+            >
+              <FormControl isInvalid={errors.name}>
+                <FormLabel htmlFor="name">Ditt namn</FormLabel>
+                <Input
+                  id="name"
+                  {...register("name", {
+                    required: errorMessage,
+                    minLength: {
+                      value: 4,
+                      message: "Minsta längd är 4 tecken",
+                    },
+                  })}
+                />
+                <FormErrorMessage>
+                  {errors.name && errors.name.message}
+                </FormErrorMessage>
+              </FormControl>
+            </chakra.form>
           </ModalBody>
 
           <ModalFooter>
             <Button
-            mr={4}
+              mr={4}
               colorScheme="orange"
               variant="outline"
               onClick={() => setModalVisible(false)}
             >
               Stäng
             </Button>
-            <Button colorScheme="orange" >
+            <Button colorScheme="orange" type="submit" form="adoption-form">
               Skicka
             </Button>
           </ModalFooter>
