@@ -41,12 +41,12 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               Lämna dina uppgifter och önskemål om vilket fadderprogram du vill
               teckna dig för, så kontaktar vi dig snarast.
             </Text>
-            <chakra.form
+            < form
               name="fadderprogram"
               id="adoption-form"
               data-netlify="true"
               method="POST"
-              netlify-honeypot="bot-field" hidden
+              netlify-honeypot="bot-field" 
               onSubmit={handleSubmit(handleFormSubmission)}
             >
               <input type="hidden" name="form-name" value="fadderprogram" />
@@ -66,7 +66,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                   {errors.name && errors.name.message}
                 </FormErrorMessage>
               </FormControl>
-            </chakra.form>
+            </form>
           </ModalBody>
 
           <ModalFooter>
