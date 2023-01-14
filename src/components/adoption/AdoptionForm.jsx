@@ -46,6 +46,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               data-netlify="true"
               onSubmit={handleSubmit(handleFormSubmission)}
             >
+              <input type="hidden" name="form-name" value="Fadderprogram" />
               <FormControl isInvalid={errors.name}>
                 <FormLabel htmlFor="name">Ditt namn</FormLabel>
                 <Input
