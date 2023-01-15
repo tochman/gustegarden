@@ -12,7 +12,7 @@ import {
   FormLabel,
   FormControl,
   Input,
-  chakra
+  chakra,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 
@@ -28,7 +28,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     console.table(data);
   };
 
-  const errorMessage = "Det här fältet är obligatoriskt"
+  const errorMessage = "Det här fältet är obligatoriskt";
   return (
     <>
       <Modal isOpen={isOpen} onClose={() => setModalVisible(false)}>
@@ -41,12 +41,12 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               Lämna dina uppgifter och önskemål om vilket fadderprogram du vill
               teckna dig för, så kontaktar vi dig snarast.
             </Text>
-            < form
+            <form
               name="fadderprogram"
               id="adoption-form"
               data-netlify="true"
               method="POST"
-              netlify-honeypot="bot-field" 
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit(handleFormSubmission)}
             >
               <input type="hidden" name="form-name" value="fadderprogram" />
