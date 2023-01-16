@@ -16,6 +16,7 @@ import {
   chakra,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const AdoptionForm = ({ isOpen, setModalVisible }) => {
   const {
@@ -23,6 +24,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     register,
     formState: { errors, isSubmitting },
   } = useForm();
+  const navigate = useNavigate()
 
   const handleFormSubmission = (data) => {
     setModalVisible(false);
@@ -32,7 +34,8 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     form.elements.email.value = data.email;
     form.elements.message.value = data.message;
     form.submit();
-
+    
+    navigate('/')
     // fetch("/", {
     //   method: "POST",
     //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -57,8 +60,6 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
             </Text>
             <form
               id="adoption-form"
-              name="adoptionform"
-              method="POST"
               onSubmit={handleSubmit(handleFormSubmission)}
             >
               <input type="hidden" name="form-name" value="fadderprogram" />
