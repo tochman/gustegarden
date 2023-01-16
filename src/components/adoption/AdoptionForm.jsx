@@ -12,6 +12,7 @@ import {
   FormLabel,
   FormControl,
   Input,
+  Textarea,
   chakra,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
@@ -25,15 +26,15 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
 
   const handleFormSubmission = (data) => {
     setModalVisible(false);
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...data })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: { "form-name": "fadderprogram", ...data }
+    // })
+    //   .then(() => alert("Success!"))
+    //   .catch(error => alert(error));
 
-    e.preventDefault();
+    // e.preventDefault();
   };
 
   const errorMessage = "Det här fältet är obligatoriskt";
@@ -50,15 +51,11 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               teckna dig för, så kontaktar vi dig snarast.
             </Text>
             <form
-              name="fadderprogram"
               id="adoption-form"
-              data-netlify="true"
-              method="POST"
-              netlify-honeypot="bot-field"
               onSubmit={handleSubmit(handleFormSubmission)}
             >
               <input type="hidden" name="form-name" value="fadderprogram" />
-              <FormControl isInvalid={errors.name}>
+              <FormControl isInvalid={errors.name} mt={2}>
                 <FormLabel htmlFor="name">Ditt namn</FormLabel>
                 <Input
                   id="name"
@@ -72,6 +69,39 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                 />
                 <FormErrorMessage>
                   {errors.name && errors.name.message}
+                </FormErrorMessage>
+              </FormControl>
+              <FormControl isInvalid={errors.email} mt={2}>
+                <FormLabel htmlFor="email">Din mailadress</FormLabel>
+                <Input
+                  id="email"
+                  {...register("email", {
+                    required: errorMessage,
+                    minLength: {
+                      value: 4,
+                      message: "Minsta längd är 4 tecken",
+                    },
+                  })}
+                />
+                <FormErrorMessage>
+                  {errors.email && errors.email.message}
+                </FormErrorMessage>
+              </FormControl>
+              <FormControl isInvalid={errors.message} mt={2}>
+                <FormLabel htmlFor="message">Meddelande/Önskemål</FormLabel>
+                <Textarea
+
+                  id="message"
+                  {...register("message", {
+                    required: errorMessage,
+                    minLength: {
+                      value: 4,
+                      message: "Minsta längd är 4 tecken",
+                    },
+                  })}
+                />
+                <FormErrorMessage>
+                  {errors.message && errors.message.message}
                 </FormErrorMessage>
               </FormControl>
             </form>
