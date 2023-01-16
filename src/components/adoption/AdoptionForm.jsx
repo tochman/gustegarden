@@ -52,13 +52,15 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
             </Text>
             <form
               id="adoption-form"
+              name="adoptionform"
+              method="POST"
               onSubmit={handleSubmit(handleFormSubmission)}
             >
               <input type="hidden" name="form-name" value="fadderprogram" />
               <FormControl isInvalid={errors.name} mt={2}>
                 <FormLabel htmlFor="name">Ditt namn</FormLabel>
                 <Input
-                  id="name"
+                  name="name"
                   {...register("name", {
                     required: errorMessage,
                     minLength: {
@@ -74,7 +76,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               <FormControl isInvalid={errors.email} mt={2}>
                 <FormLabel htmlFor="email">Din mailadress</FormLabel>
                 <Input
-                  id="email"
+                  name="email"
                   {...register("email", {
                     required: errorMessage,
                     minLength: {
@@ -91,7 +93,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                 <FormLabel htmlFor="message">Meddelande/Önskemål</FormLabel>
                 <Textarea
 
-                  id="message"
+                  name="message"
                   {...register("message", {
                     required: errorMessage,
                     minLength: {
