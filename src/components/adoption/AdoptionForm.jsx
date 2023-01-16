@@ -14,6 +14,11 @@ import {
   Input,
   Textarea,
   createStandaloneToast,
+  HStack,
+  Select,
+  Radio,
+  RadioGroup,
+  Box,
 } from "@chakra-ui/react";
 import {
   useNetlifyForm,
@@ -24,12 +29,12 @@ import {
 import { useForm } from "react-hook-form";
 import { emailRegex } from "../../utilities/emailRegex";
 
-
 const AdoptionForm = ({ isOpen, setModalVisible }) => {
   const { toast } = createStandaloneToast();
   const {
     handleSubmit,
     register,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm();
   const netlify = useNetlifyForm({
@@ -45,6 +50,13 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     },
   });
 
+  const programWatch = watch("program");
+  const sizes = [
+    { label: "Small", value: "S" },
+    { label: "Medium", value: "M" },
+    { label: "Large", value: "L" },
+    { label: "Extra Large", value: "XL" },
+  ];
   const handleFormSubmission = (data) => {
     netlify.handleSubmit(null, data);
   };
@@ -68,7 +80,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                 id="adoption-form"
               >
                 <Honeypot />
-                {netlify.error && <Text>Någonting blev tyvärr fel</Text>}
+                {netlify.error && <Text>Någonting blev tyvärr fel...</Text>}
                 <FormControl isInvalid={errors.name} mt={2}>
                   <FormLabel htmlFor="name">Ditt namn</FormLabel>
                   <Input
@@ -92,7 +104,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                     {...register("email", {
                       pattern: {
                         value: emailRegex,
-                        message: t("forms.messages.invalidEmail"),
+                        message: "Var god ange ett giltigt mailadress.",
                       },
                       required: errorMessage,
                       minLength: {
@@ -105,6 +117,57 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                     {errors.email && errors.email.message}
                   </FormErrorMessage>
                 </FormControl>
+
+                <RadioGroup defaultValue="3 months">
+                  <HStack mt={4}>
+                    <Radio
+                      name="program"
+                      value="3 months"
+                      {...register("program")}
+                      data-cy="3_months"
+                      id="3_months"
+                    >
+                      3 månader
+                    </Radio>
+                    <Radio
+                      name="program"
+                      value="6 months"
+                      {...register("program")}
+                      data-cy="6_months"
+                      id="6_months"
+                    >
+                      6 månader
+                    </Radio>
+                    <Radio
+                      name="program"
+                      value="12 months"
+                      {...register("program")}
+                      data-cy="12_months"
+                      id="12_months"
+                    >
+                      12 månader
+                    </Radio>
+                  </HStack>
+                </RadioGroup>
+                <Box mt={2}>
+                  {programWatch === "6 months" && (
+                    <Text>Bonusgåva: T-shirt</Text>
+                  )}
+                  {programWatch === "12 months" && (
+                    <Text>Bonusgåva: Hoodie</Text>
+                  )}
+
+                  {(programWatch === "6 months" ||
+                    programWatch === "12 months") && (
+                    <Select placeholder="Välj en storlek">
+                      {sizes.map((size) => (
+                        <option key={size.value} value={size.value}>
+                          {size.label}
+                        </option>
+                      ))}
+                    </Select>
+                  )}
+                </Box>
                 <FormControl isInvalid={errors.message} mt={2}>
                   <FormLabel htmlFor="message">Meddelande/Önskemål</FormLabel>
                   <Textarea
