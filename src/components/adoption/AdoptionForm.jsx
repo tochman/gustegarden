@@ -22,6 +22,8 @@ import {
   Honeypot,
 } from "react-netlify-forms";
 import { useForm } from "react-hook-form";
+import { emailRegex } from "../../utilities/emailRegex";
+
 
 const AdoptionForm = ({ isOpen, setModalVisible }) => {
   const { toast } = createStandaloneToast();
@@ -88,6 +90,10 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                   <Input
                     name="email"
                     {...register("email", {
+                      pattern: {
+                        value: emailRegex,
+                        message: t("forms.messages.invalidEmail"),
+                      },
                       required: errorMessage,
                       minLength: {
                         value: 4,
