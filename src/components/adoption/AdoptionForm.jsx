@@ -58,7 +58,6 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     { label: "Extra Large", value: "XL" },
   ];
   const handleFormSubmission = (data) => {
-    debugger;
     netlify.handleSubmit(null, data);
   };
 

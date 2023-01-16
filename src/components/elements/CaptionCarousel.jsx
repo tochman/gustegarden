@@ -34,7 +34,7 @@ const CaptionCarousel = () => {
   const cards = [
     {
       title: "SMÅSKALIGHET",
-      text: "Djur och Människor i balans",
+      text: "Djur och människor i balans",
       image: image_1,
       mode: "dark",
     },
@@ -46,7 +46,7 @@ const CaptionCarousel = () => {
     },
     {
       title: "ENGAGEMANG",
-      text: "Lär nytt varje dag",
+      text: "Djurens bästa i fokus",
       image: image_3,
       mode: "dark",
     },
@@ -55,7 +55,6 @@ const CaptionCarousel = () => {
   return (
     <>
       <Helmet>
-        {/* CSS files for react-slick */}
         <link
           rel="stylesheet"
           type="text/css"
@@ -74,31 +73,29 @@ const CaptionCarousel = () => {
         width={"full"}
         overflow={"hidden"}
       >
-        {/* Left Icon */}
         <IconButton
           aria-label="left-arrow"
           variant="ghost"
           position="absolute"
           left={side}
           top={top}
-          transform={"translate(0%, -50%)"}
+          transform={"translate(0%, -20%)"}
           zIndex={2}
           onClick={() => slider?.slickPrev()}
         >
-          <BiLeftArrowAlt size="40px" />
+          <BiLeftArrowAlt color="white" size="40px" />
         </IconButton>
-        {/* Right Icon */}
         <IconButton
           aria-label="right-arrow"
           variant="ghost"
           position="absolute"
           right={side}
           top={top}
-          transform={"translate(0%, -50%)"}
+          transform={"translate(0%, -20%)"}
           zIndex={2}
           onClick={() => slider?.slickNext()}
         >
-          <BiRightArrowAlt size="40px" />
+          <BiRightArrowAlt color="white" size="40px" />
         </IconButton>
         {/* Slider */}
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
