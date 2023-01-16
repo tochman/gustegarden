@@ -26,13 +26,13 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
 
   const handleFormSubmission = (data) => {
     setModalVisible(false);
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: { "form-name": "fadderprogram", ...data }
-    // })
-    //   .then(() => alert("Success!"))
-    //   .catch(error => alert(error));
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: { "form-name": "fadderprogram", ...data }
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
 
     // e.preventDefault();
   };
