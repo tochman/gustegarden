@@ -27,10 +27,12 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
   const handleFormSubmission = (data) => {
     setModalVisible(false);
     const form = document.forms.fadderprogram;
+    form.addEventListener("submit", (event) => event.preventDefault());
     form.elements.name.value = data.name;
     form.elements.email.value = data.email;
     form.elements.message.value = data.message;
     form.submit();
+
     // fetch("/", {
     //   method: "POST",
     //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
