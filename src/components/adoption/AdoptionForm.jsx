@@ -58,6 +58,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     { label: "Extra Large", value: "XL" },
   ];
   const handleFormSubmission = (data) => {
+    debugger;
     netlify.handleSubmit(null, data);
   };
 
@@ -159,7 +160,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
 
                   {(programWatch === "6 months" ||
                     programWatch === "12 months") && (
-                    <Select placeholder="Välj en storlek">
+                    <Select placeholder="Välj en storlek" {...register("size")}>
                       {sizes.map((size) => (
                         <option key={size.value} value={size.value}>
                           {size.label}
@@ -170,19 +171,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                 </Box>
                 <FormControl isInvalid={errors.message} mt={2}>
                   <FormLabel htmlFor="message">Meddelande/Önskemål</FormLabel>
-                  <Textarea
-                    name="message"
-                    {...register("message", {
-                      required: errorMessage,
-                      minLength: {
-                        value: 4,
-                        message: "Minsta längd är 4 tecken",
-                      },
-                    })}
-                  />
-                  <FormErrorMessage>
-                    {errors.message && errors.message.message}
-                  </FormErrorMessage>
+                  <Textarea name="message" {...register("message")} />
                 </FormControl>
               </NetlifyFormComponent>
             </NetlifyFormProvider>
