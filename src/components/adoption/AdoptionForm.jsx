@@ -13,7 +13,7 @@ import {
   FormControl,
   Input,
   Textarea,
-  chakra,
+  createStandaloneToast,
 } from "@chakra-ui/react";
 import {
   useNetlifyForm,
@@ -22,10 +22,9 @@ import {
   Honeypot,
 } from "react-netlify-forms";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 
 const AdoptionForm = ({ isOpen, setModalVisible }) => {
-  const navigate = useNavigate();
+  const { toast } = createStandaloneToast();
   const {
     handleSubmit,
     register,
@@ -36,27 +35,16 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     action: "/adoption",
     honeypotName: "bot-field",
     onSuccess: (response, context) => {
-      console.log("Successfully sent form data to Netlify Server");
+      toast({
+        title: "Tack för din beställning/intresseanmälan!",
+        status: "success",
+      });
       setModalVisible(false);
-      debugger;
     },
   });
 
   const handleFormSubmission = (data) => {
     netlify.handleSubmit(null, data);
-    // const form = document.forms.fadderprogram;
-    // form.addEventListener("submit", (event) => event.preventDefault());
-    // form.elements.name.value = data.name;
-    // form.elements.email.value = data.email;
-    // form.elements.message.value = data.message;
-    // form.submit();
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: JSON.stringify({ "form-name": "fadderprogram", ...data }),
-    // })
-    //   .then(() => alert("Success!"))
-    //   .catch((error) => alert(error));
   };
 
   const errorMessage = "Det här fältet är obligatoriskt";
@@ -73,23 +61,12 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               teckna dig för, så kontaktar vi dig snarast.
             </Text>
             <NetlifyFormProvider {...netlify}>
-              <NetlifyFormComponent onSubmit={handleSubmit(handleFormSubmission)} id="adoption-form">
+              <NetlifyFormComponent
+                onSubmit={handleSubmit(handleFormSubmission)}
+                id="adoption-form"
+              >
                 <Honeypot />
-                {netlify.success && (
-                  <Text>
-                    Thanks for contacting us!
-                  </Text>
-                )}
-                {netlify.error && (
-                  <Text>
-                    Någonting blev tyvärr fel
-                  </Text>
-                )}
-                {/* <form
-              id="adoption-form"
-              onSubmit={handleSubmit(handleFormSubmission)}
-            >
-              <input type="hidden" name="form-name" value="fadderprogram" /> */}
+                {netlify.error && <Text>Någonting blev tyvärr fel</Text>}
                 <FormControl isInvalid={errors.name} mt={2}>
                   <FormLabel htmlFor="name">Ditt namn</FormLabel>
                   <Input
@@ -138,7 +115,6 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
                     {errors.message && errors.message.message}
                   </FormErrorMessage>
                 </FormControl>
-                {/* </form> */}
               </NetlifyFormComponent>
             </NetlifyFormProvider>
           </ModalBody>
