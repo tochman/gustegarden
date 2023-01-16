@@ -29,12 +29,10 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: { "form-name": "fadderprogram", ...data }
+      body: JSON.stringify({ "form-name": "fadderprogram", ...data }),
     })
       .then(() => alert("Success!"))
-      .catch(error => alert(error));
-
-    // e.preventDefault();
+      .catch((error) => alert(error));
   };
 
   const errorMessage = "Det här fältet är obligatoriskt";
@@ -54,7 +52,10 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               id="adoption-form"
               name="adoptionform"
               method="POST"
-              onSubmit={handleSubmit(handleFormSubmission)}
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit(handleFormSubmission);
+              }}
             >
               <input type="hidden" name="form-name" value="fadderprogram" />
               <FormControl isInvalid={errors.name} mt={2}>
@@ -92,7 +93,6 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               <FormControl isInvalid={errors.message} mt={2}>
                 <FormLabel htmlFor="message">Meddelande/Önskemål</FormLabel>
                 <Textarea
-
                   name="message"
                   {...register("message", {
                     required: errorMessage,
