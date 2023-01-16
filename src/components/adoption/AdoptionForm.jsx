@@ -27,9 +27,9 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
   const handleFormSubmission = (data) => {
     setModalVisible(false);
     const form = document.forms.fadderprogram;
-    form.elements.name = data.name;
-    form.elements.email = data.email;
-    form.elements.message = data.message;
+    form.elements.name.value = data.name;
+    form.elements.email.value = data.email;
+    form.elements.message.value = data.message;
     form.submit();
     // fetch("/", {
     //   method: "POST",
