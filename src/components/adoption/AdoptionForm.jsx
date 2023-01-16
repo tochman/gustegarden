@@ -73,7 +73,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               teckna dig för, så kontaktar vi dig snarast.
             </Text>
             <NetlifyFormProvider {...netlify}>
-              <NetlifyFormComponent onSubmit={handleSubmit(handleFormSubmission)}>
+              <NetlifyFormComponent onSubmit={handleSubmit(handleFormSubmission)} id="adoption-form">
                 <Honeypot />
                 {netlify.success && (
                   <p sx={{ variant: "alerts.success", p: 3 }}>
