@@ -25,7 +25,15 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
 
   const handleFormSubmission = (data) => {
     setModalVisible(false);
-    console.table(data);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...data })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
   };
 
   const errorMessage = "Det här fältet är obligatoriskt";
