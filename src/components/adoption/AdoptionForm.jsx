@@ -26,13 +26,18 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
 
   const handleFormSubmission = (data) => {
     setModalVisible(false);
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: JSON.stringify({ "form-name": "fadderprogram", ...data }),
-    })
-      .then(() => alert("Success!"))
-      .catch((error) => alert(error));
+    const form = document.forms.fadderprogram;
+    form.elements.name = data.name;
+    form.elements.email = data.email;
+    form.elements.message = data.message;
+    form.submit();
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: JSON.stringify({ "form-name": "fadderprogram", ...data }),
+    // })
+    //   .then(() => alert("Success!"))
+    //   .catch((error) => alert(error));
   };
 
   const errorMessage = "Det här fältet är obligatoriskt";
@@ -52,10 +57,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               id="adoption-form"
               name="adoptionform"
               method="POST"
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleSubmit(handleFormSubmission);
-              }}
+              onSubmit={handleSubmit(handleFormSubmission)}
             >
               <input type="hidden" name="form-name" value="fadderprogram" />
               <FormControl isInvalid={errors.name} mt={2}>
