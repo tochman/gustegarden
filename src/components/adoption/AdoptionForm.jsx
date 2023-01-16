@@ -32,7 +32,7 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
     formState: { errors, isSubmitting },
   } = useForm();
   const netlify = useNetlifyForm({
-    name: "fadderprogram2",
+    name: "fadderprogram",
     action: "/adoption",
     honeypotName: "bot-field",
     onSuccess: (response, context) => {
@@ -76,15 +76,14 @@ const AdoptionForm = ({ isOpen, setModalVisible }) => {
               <NetlifyFormComponent onSubmit={handleSubmit(handleFormSubmission)} id="adoption-form">
                 <Honeypot />
                 {netlify.success && (
-                  <p sx={{ variant: "alerts.success", p: 3 }}>
+                  <Text>
                     Thanks for contacting us!
-                  </p>
+                  </Text>
                 )}
                 {netlify.error && (
-                  <p sx={{ variant: "alerts.muted", p: 3 }}>
-                    Sorry, we could not reach servers. Because it only works on
-                    Netlify, our GitHub demo does not provide a response.
-                  </p>
+                  <Text>
+                    Någonting blev tyvärr fel
+                  </Text>
                 )}
                 {/* <form
               id="adoption-form"
