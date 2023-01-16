@@ -87,7 +87,6 @@ const CallsToAction = () => {
                 <TestimonialText>{card.text}</TestimonialText>
                 <Button
                   onClick={() => {
-                    debugger;
                     card.target && navigate(card.target);
                   }}
                 >
