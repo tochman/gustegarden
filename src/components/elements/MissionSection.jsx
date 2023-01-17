@@ -22,12 +22,7 @@ const MissionSection = () => {
   const isInViewBox3 = useInView(box3, { once: true });
   return (
     <Container maxW="6xl" px={{ base: 6, md: 3 }} py={14}>
-      <SlideFade
-        ref={box1}
-        in={isInViewBox1}
-        offsetX="-200px"
-        delay={0.5}
-      >
+      <SlideFade ref={box1} in={isInViewBox1} offsetX="-200px" delay={0.5}>
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="center"
@@ -47,7 +42,7 @@ const MissionSection = () => {
             />
           </Box>
           <Stack direction="column" spacing={6} justifyContent="center">
-            <Heading mt={{base: 0, lg: "-10px"}} size={"lg"}>
+            <Heading mt={{ base: 0, lg: "-10px" }} size={"lg"}>
               Gustegården
             </Heading>
             <Box>
@@ -70,12 +65,7 @@ const MissionSection = () => {
         </Stack>
       </SlideFade>
       <Box minHeight={"10px"} margin={"10px"} />
-      <SlideFade
-        ref={box2}
-        in={isInViewBox2}
-        offsetX="200px"
-        delay={0.5}
-      >
+      <SlideFade ref={box2} in={isInViewBox2} offsetX="200px" delay={0.5}>
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="center"
@@ -96,11 +86,11 @@ const MissionSection = () => {
                 och Mona Lisa.
               </Content>
               <Content mt={4}>
-                Gutefåren härstammar från de gotländska utegångsfåren och är
-                en lantras med anor från flera tusen år tillbaka. På Gotland
-                kallas de traditionellt för hånnlambi (hornfår). Både baggar och
-                tackor har horn, men baggens horn är kraftigare än tackans.
-                Färgen på våra varierar i vitt, grått och svart.
+                Gutefåren härstammar från de gotländska utegångsfåren och är en
+                lantras med anor från flera tusen år tillbaka. På Gotland kallas
+                de traditionellt för hånnlambi (hornfår). Både baggar och tackor
+                har horn, men baggens horn är kraftigare än tackans. Färgen på
+                våra varierar i vitt, grått och svart.
               </Content>
             </Box>
           </Stack>
@@ -120,12 +110,7 @@ const MissionSection = () => {
         </Stack>
         <Box minHeight={"10px"} margin={"20px"} />
       </SlideFade>
-      <SlideFade
-        ref={box3}
-        in={isInViewBox3}
-        offsetX="-200px"
-        delay={0.5}
-      >
+      <SlideFade ref={box3} in={isInViewBox3} offsetX="-200px" delay={0.5}>
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="center"
@@ -145,7 +130,7 @@ const MissionSection = () => {
             />
           </Box>
           <Stack direction="column" spacing={6} justifyContent="center">
-            <Heading mt={{base: 0, lg: "-10px"}} size={"lg"}>
+            <Heading mt={{ base: 0, lg: "-10px" }} size={"lg"}>
               Getter
             </Heading>
             <Box>
