@@ -7,8 +7,8 @@ const Logo = (props) => {
       htmlWidth={props.width || "210px"}
       htmlHeight={"auto"}
       src={logo}
-      style={{ cursor: "pointer" }}
       m={1}
+      {...props}
     />
   );
 };

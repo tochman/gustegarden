@@ -1,8 +1,11 @@
-import { Box, Container, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container, useColorModeValue } from "@chakra-ui/react";
 import { useCookieConsentContext } from "@use-cookie-consent/react";
+import { useNavigate } from "react-router-dom";
 import CookieBanner from "../elements/CookieBanner";
 import Logo from "../elements/Logo";
+
 const Footer = () => {
+  const navigate = useNavigate();
   const { consent } = useCookieConsentContext();
   return (
     <>
@@ -21,7 +24,11 @@ const Footer = () => {
           justify={{ base: "center", md: "center" }}
           align={{ base: "center", md: "center" }}
         >
-           <Logo width="100px"/>
+          <Logo
+            width="100px"
+            onClick={() => navigate("/")}
+            style={{ cursor: "pointer" }}
+          />
         </Container>
       </Box>
     </>

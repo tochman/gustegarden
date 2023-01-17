@@ -1,12 +1,13 @@
 import { Box, Flex, useColorModeValue, Text } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { debounce } from "../../utilities/debounce";
 import Logo from "../elements/Logo";
 
 const Header = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const navigate = useNavigate();
 
   const navbarStyles = {
     width: "100%",
@@ -61,7 +62,7 @@ const Header = () => {
           ml: 8,
         }}
       >
-        <Logo />
+        <Logo onClick={() => navigate("/")} style={{ cursor: "pointer" }} />
       </Flex>
     </Box>
   );

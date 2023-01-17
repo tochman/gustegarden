@@ -14,8 +14,7 @@ import image_2 from "../../assets/sheep_maja.jpg";
 import image_3 from "../../assets/goats_chinook.jpg";
 import { Helmet } from "react-helmet";
 
-// Settings for the slider
-const settings = {
+const sliderSettings = {
   dots: true,
   arrows: false,
   fade: true,
@@ -33,15 +32,15 @@ const CaptionCarousel = () => {
   const side = useBreakpointValue({ base: "30%", md: "40px" });
   const cards = [
     {
-      title: "SMÅSKALIGHET",
-      text: "Djur och människor i balans",
-      image: image_1,
-      mode: "dark",
-    },
-    {
       title: "HÅLLBARHET",
       text: "Respektfullt och försiktig djurhållning",
       image: image_2,
+      mode: "dark",
+    },
+    {
+      title: "SMÅSKALIGHET",
+      text: "Djur och människor i balans",
+      image: image_1,
       mode: "dark",
     },
     {
@@ -98,7 +97,7 @@ const CaptionCarousel = () => {
           <BiRightArrowAlt color="white" size="40px" />
         </IconButton>
         {/* Slider */}
-        <Slider {...settings} ref={(slider) => setSlider(slider)}>
+        <Slider {...sliderSettings} ref={(slider) => setSlider(slider)}>
           {cards.map((card, index) => (
             <Box
               key={index}
@@ -109,13 +108,17 @@ const CaptionCarousel = () => {
               backgroundSize="cover"
               bgImage={`linear-gradient(rgba(255,255,255, 0.1), rgba(0, 0, 0, 0.1)), url(${card.image})`}
             >
-              <Container size="container.lg" height="600px" position="relative">
+              <Container
+                size="container.lg"
+                height={{ base: "600px", sm: "50vh" }}
+                position="relative"
+              >
                 <Stack
                   spacing={6}
-                  w={"full"}
+                  w={{ base: "full" }}
                   maxW={"lg"}
                   position="absolute"
-                  bottom="10%"
+                  bottom="0"
                   transform="translate(0, -50%)"
                 >
                   <Heading
