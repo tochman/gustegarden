@@ -95,7 +95,7 @@ export default function Simple() {
 
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
                   <List spacing={2}>
-                    <ListItem>Fadderbevis i A4 format</ListItem>
+                    <ListItem>Fadderbevis (A4 format)</ListItem>
                     <ListItem>
                       Månadsuppdatering med bilder eller video om ditt
                       fadderdjur
