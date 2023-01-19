@@ -149,7 +149,7 @@ const Furs = () => {
                   </ListItem>
                   <ListItem>
                     <Text as={"span"} fontWeight={"bold"}>
-                      Färfäll:
+                      Fårfäll:
                     </Text>{" "}
                     1 899 till 2 299 kr
                   </ListItem>
