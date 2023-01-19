@@ -59,6 +59,7 @@ const CallsToAction = () => {
     {
       title: "Produkter",
       text: "Respektfullt och försiktig djurhållning innebär att vi tänker långsigtigt och tar vara på allt som våra djur producerar. Du kan ta del av det genom att köpa till exempel kött, fäll eller andra prodikter från oss. Varför inte pryda en myshörna eller din favoritfotölj med ett färfäll?  Titta i vår enkla webshop för inspiration. ",
+      target: "furs"
     },
     {
       title: "Besök oss - på plats eller digitalt",

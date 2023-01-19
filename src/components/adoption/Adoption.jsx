@@ -12,6 +12,7 @@ import {
   useColorModeValue,
   List,
   ListItem,
+  chakra,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import AdoptionForm from "./AdoptionForm";
@@ -143,13 +144,15 @@ export default function Simple() {
               </Box>
               <VStack spacing={{ base: 4, sm: 6 }}>
                 <Text fontSize={"lg"}>
-                  Du betalar inget direkt. Vi kommer att skicka en betallänk
-                  till dig efter att vi har mottagit din beställning och
-                  bekräftat dina uppgifter per mail. Om du till exempel vill ge
-                  bort ett fadderskap i present skriver du det i
-                  meddelandefältet. Glöm inte att ange storlek på t-shirt eller
-                  hoodie om du tecknar dig för ett 6 eller 12-månaders
-                  fadderskap.
+                  <chakra.span fontWeight={"bold"}>
+                    Du betalar inget direkt.
+                  </chakra.span>{" "}
+                  Vi kommer att skicka en betallänk till dig efter att vi har
+                  mottagit din beställning och bekräftat dina uppgifter per
+                  mail. Om du till exempel vill ge bort ett fadderskap i present
+                  skriver du det i meddelandefältet. Glöm inte att ange storlek
+                  på t-shirt eller hoodie om du tecknar dig för ett 6 eller
+                  12-månaders fadderskap.
                 </Text>
               </VStack>
             </Stack>
