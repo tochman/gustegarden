@@ -82,7 +82,7 @@ const Furs = () => {
                   exemper Björsöbacka Gård.
                 </Text>
                 <Text fontSize={"xl"}>
-                  Fåren kommer i olika färger: mörkg-, mellan- och ljsgrått samt
+                  Fåren kommer i olika nyanser: mörk-, mellan- och ljsgrått samt
                   vitt. Notera att fällens färg varierar en del och du kommer få
                   en bild på just den fäll som vi väljer ut åt dig innan du
                   slutgiltigt bekräftar din beställning.
