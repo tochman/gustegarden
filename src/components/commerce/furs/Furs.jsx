@@ -16,13 +16,14 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import CaptionCarousel from "./FurCarousel";
+import FurForm from "./FurForm";
 
 const Furs = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [formData, setFormData] = useState({});
   return (
     <>
-      {/* <AdoptionForm isOpen={modalVisible} setModalVisible={setModalVisible} /> */}
+      <FurForm isOpen={modalVisible} setModalVisible={setModalVisible} />
       <Container maxW={"7xl"}>
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
@@ -74,9 +75,9 @@ const Furs = () => {
                 <Text fontSize={"xl"}>
                   I samband med att ett djur slaktas, tar vi vara på skinnet och
                   skickar iväg det till beredning. Det betyder att vi inte har
-                  ett jättestort utbud av fällar att erbjuda, men att de vi har
-                  är från djur vi känner och har tagit hand om. Fällen är
-                  tvättbara och håller en hög kvalitet. . Alla våra fäll kommer
+                  ett jättestort utbud av fällar att erbjuda, men att de fällar
+                  vi har är från djur vi känner och har tagit hand om. Fällen är
+                  tvättbara och håller en hög kvalitet. Alla våra fäll kommer
                   antingen från egna djur eller från våra vänner, som till
                   exemper Björsöbacka Gård.
                 </Text>
@@ -85,6 +86,12 @@ const Furs = () => {
                   vitt. Notera att fällens färg varierar en del och du kommer få
                   en bild på just den fäll som vi väljer ut åt dig innan du
                   slutgiltigt bekräftar din beställning.
+                </Text>
+                <Text fontSize={"xl"}>
+                  Storleken på fällen varierar beroende på om de kommer från
+                  vuxna djur eller lamm. Normalt är lammskinn ca 100 x 80 cm och
+                  fäll från vuxna tackor 110 x 85 cm. Fällen från lamm är
+                  mjukare och känns skönare mot huden.
                 </Text>
               </VStack>
               <Box>
@@ -106,8 +113,8 @@ const Furs = () => {
                     </ListItem>
                     <ListItem>
                       2. Vi går igenom vår lager av fällar och återkommer till
-                      dig per mail med en bild på det fäll som vi tror kommer
-                      passa.{" "}
+                      dig per mail med en bild och pris på det fäll som vi tror
+                      kommer passa.{" "}
                     </ListItem>
                   </List>
                   <List spacing={2}>
@@ -138,13 +145,13 @@ const Furs = () => {
                     <Text as={"span"} fontWeight={"bold"}>
                       Lammfäll:
                     </Text>{" "}
-                    2 399 kr
+                    2 100 till 2 599 kr
                   </ListItem>
                   <ListItem>
                     <Text as={"span"} fontWeight={"bold"}>
                       Färfäll:
                     </Text>{" "}
-                    1 899
+                    1 899 till 2 299 kr
                   </ListItem>
                 </List>
               </Box>
@@ -161,7 +168,7 @@ const Furs = () => {
               </VStack>
             </Stack>
 
-            {/* <Button
+            <Button
               colorScheme="orange"
               w={"full"}
               mt={8}
@@ -175,7 +182,7 @@ const Furs = () => {
               onClick={() => setModalVisible(true)}
             >
               BESTÄLL
-            </Button> */}
+            </Button>
           </Stack>
         </SimpleGrid>
       </Container>

@@ -10,18 +10,33 @@
     <div id="root"></div>
     <form
       name="fadderprogram"
-      netlify 
+      netlify
       netlify-honeypot="bot-field"
       action="/thank-you"
       hidden
     >
-    <input type="hidden" name="form-name" value="fadderprogram" />
-    <input type="text"  name="name">
-    <input type="email" name="email">
-    <input type="text" name="program" />
-    <input type="text" name="size" />
-    <input type="text" name="message" />
-  </form>
+      <input type="hidden" name="form-name" value="fadderprogram" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="program" />
+      <input type="text" name="size" />
+      <input type="text" name="message" />
+    </form>
+    <form
+      name="fur_order"
+      netlify
+      netlify-honeypot="bot-field"
+      action="/thank-you"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="fadderprogram" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="variant" />
+      <input type="text" name="color" />
+      <input type="text" name="message" />
+    </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
