@@ -67,8 +67,9 @@ const Furs = () => {
                 >
                   Fäll från fårpäls är väldigt populära som inredningsdetaljer.
                   De är vackra, hållbara och naturliga. Fårskinn kan användas på
-                  en mängd olika sätt: i favoritfotöljen, i sovrummet eller som
-                  ett mjukt och fantastiskt skönt underlag i barnvagnen.
+                  en mängd olika sättsom inredning till hemmet: i
+                  favoritfotöljen, i sovrummet eller som ett mjukt och
+                  fantastiskt skönt underlag i barnvagnen.
                 </Text>
                 <Text fontSize={"xl"}>
                   I samband med att ett djur slaktas, tar vi vara på skinnet och
@@ -145,7 +146,6 @@ const Furs = () => {
                     </Text>{" "}
                     1 899
                   </ListItem>
-
                 </List>
               </Box>
               <VStack spacing={{ base: 4, sm: 6 }}>
