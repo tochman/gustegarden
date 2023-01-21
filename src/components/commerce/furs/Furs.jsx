@@ -13,6 +13,7 @@ import {
   List,
   ListItem,
   chakra,
+  Divider,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import CaptionCarousel from "./FurCarousel";
@@ -172,6 +173,7 @@ const Furs = () => {
               colorScheme="orange"
               w={"full"}
               mt={8}
+              mb={8}
               size={"lg"}
               py={"7"}
               textTransform={"uppercase"}
@@ -183,6 +185,9 @@ const Furs = () => {
             >
               BESTÄLL
             </Button>
+            <Box mt={{ base: 0, sm: 8 }}>
+              <Divider padding={4} mb={{ base: 0, sm: 8 }} />
+            </Box>
           </Stack>
         </SimpleGrid>
       </Container>

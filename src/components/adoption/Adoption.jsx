@@ -172,6 +172,9 @@ export default function Simple() {
             >
               BESTÄLL
             </Button>
+            <Box mt={{ base: 0, sm: 8 }}>
+              <Divider padding={4} mb={{ base: 0, sm: 8 }} />
+            </Box>
           </Stack>
         </SimpleGrid>
       </Container>
