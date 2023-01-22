@@ -1,5 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
-body, h1, h2, h3, h4, h5, h6, p {
-  font-family: 'Josefin Sans' !important;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Josefin Sans" !important;
+}
+
+body {
+  overflow: hidden;
+  overflow-y: auto;
 }

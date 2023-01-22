@@ -11,7 +11,7 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
 import image_1 from "../../../assets/gotland_1.jpeg";
 import image_2 from "../../../assets/gotland_2.jpeg";
-import image_3 from "../../../assets/gotland_fur_closeup.jpeg";
+import image_3 from "../../../assets/furs_1.jpg";
 import { Helmet } from "react-helmet";
 
 const sliderSettings = {
