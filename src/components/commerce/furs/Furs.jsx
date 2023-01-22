@@ -83,7 +83,7 @@ const Furs = () => {
                   exemper Björsöbacka Gård.
                 </Text>
                 <Text fontSize={"xl"}>
-                  Fåren kommer i olika nyanser: mörk-, mellan- och ljsgrått samt
+                  Fällen kommer i olika nyanser: mörk-, mellan- och ljsgrått samt
                   vitt. Notera att fällens färg varierar en del och du kommer få
                   en bild på just den fäll som vi väljer ut åt dig innan du
                   slutgiltigt bekräftar din beställning.
@@ -124,8 +124,8 @@ const Furs = () => {
                     </ListItem>
                     <ListItem>
                       4. Skinnet skickas till dig tillsamans med skötselråd samt
-                      äkthetsintyg. Du kan självklar även komma förbi gården och
-                      hämta upp det själv.
+                      äkthetsintyg. Du kan självklart även komma förbi gården och
+                      hämta upp din beställning.
                     </ListItem>
                   </List>
                 </SimpleGrid>
