@@ -271,7 +271,7 @@ continue the setup by running Cypress:
 $ yarn run cypress open
 ```
 
-At theis stage I will b e presented with some options on-screen that I will need to answer. Once htat is compleate, I want to go ahead and close Cypress for now, and do some manual configuration.
+At this stage I will b e presented with some options on-screen that I will need to answer. Once that is complete, I want to go ahead and close Cypress for now, and do some manual configuration.
 
 There is a new file in the root folder titled `cypress.config.js`. I that file, I want to add some settings that I like for Cypress: 
 
