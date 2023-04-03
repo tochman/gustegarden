@@ -18,7 +18,7 @@ const CookieBanner = () => {
       <AlertIcon />
       <Stack spacing={2} direction={{ base: "column", md: "row" }}>
         <Box>
-          <Heading size={"md"}>Vi bryr oss om din integritet</Heading>
+          <Heading size={"md"}>Hej, vi bryr oss om din integritet</Heading>
           <Content size="sm">
             Genom att klicka på "Acceptera alla" samtycker du till
             lagring av cookies på din enhet för att förbättra navigeringen på
