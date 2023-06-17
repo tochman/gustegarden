@@ -47,10 +47,10 @@ const MobileMenu = ({btnRef, visible }) => {
             <DrawerHeader>Navigera</DrawerHeader>
 
             <DrawerBody>
-              <Button onClick={() => navigate("/")}>Våra Får</Button>
-              <Button onClick={() => navigate("/")}>Våra Getter</Button>
-              <Button onClick={() => navigate("/")}>Besök oss</Button>
-              <Button onClick={() => navigate("/")}>Adoptera ett djur</Button>
+              <Button onClick={() => navigate("/sheep")}>Våra Får</Button>
+              <Button onClick={() => navigate("/goats")}>Våra Getter</Button>
+              <Button onClick={() => navigate("/visit_us")}>Besök oss</Button>
+              <Button onClick={() => navigate("/adoption")}>Adoptera ett djur</Button>
             </DrawerBody>
           </DrawerContent>
         </DrawerOverlay>

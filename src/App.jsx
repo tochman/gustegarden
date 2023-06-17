@@ -13,6 +13,9 @@ const App = () => {
         <Route path={"/"} element={<MainView />} />
         <Route path={"/adoption"} element={<Adoption />} />
         <Route path={"/furs"} element={<Furs />} />
+        <Route path={"/sheep"} element={<MainView />} />
+        <Route path={"/goats"} element={<MainView />} />
+        <Route path={"/visit_us"} element={<MainView />} />
       </Routes>
       <Footer />
     </>

@@ -6,16 +6,16 @@ const DesktopMenu = () => {
 
   return (
     <Stack direction={"row"} spacing={6}>
-      <Link alignSelf={"center"} onClick={() => navigate("/")}>
+      <Link alignSelf={"center"} onClick={() => navigate("/sheep")}>
         Våra Får
       </Link>
-      <Link alignSelf={"center"} onClick={() => navigate("/")}>
+      <Link alignSelf={"center"} onClick={() => navigate("/goats")}>
         Våra Getter
       </Link>
-      <Link alignSelf={"center"} onClick={() => navigate("/")}>
+      <Link alignSelf={"center"} onClick={() => navigate("/visit_us")}>
         Besök oss
       </Link>
-      <Link alignSelf={"center"} onClick={() => navigate("/")}>
+      <Link alignSelf={"center"} onClick={() => navigate("/adoption")}>
         Adoptera ett djur
       </Link>
     </Stack>
