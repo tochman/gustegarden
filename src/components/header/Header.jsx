@@ -1,13 +1,17 @@
-import { Box, Flex, useColorModeValue, Text } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { Box, Flex, useColorModeValue, Text, Container, Hide, Stack} from "@chakra-ui/react";
+import { useState, useEffect , useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import { debounce } from "../../utilities/debounce";
 import Logo from "../elements/Logo";
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const navigate = useNavigate();
+  const btnRef = useRef();
+
 
   const navbarStyles = {
     width: "100%",
@@ -47,23 +51,22 @@ const Header = () => {
       data-cy="header"
       style={{ ...navbarStyles, top: visible ? "0" : "-80px" }}
     >
-      <Flex
+      <Container
+        as={Stack}
+        maxW={"6xl"}
+        py={4}
+        spacing={4}
+        justify={"center"}
         align={"center"}
-        _before={{
-          content: '""',
-          borderColor: useColorModeValue("gray.200", "gray.700"),
-          flexGrow: 1,
-          mr: 8,
-        }}
-        _after={{
-          content: '""',
-          borderColor: useColorModeValue("gray.200", "gray.700"),
-          flexGrow: 1,
-          ml: 8,
-        }}
       >
         <Logo onClick={() => navigate("/")} style={{ cursor: "pointer" }} />
-      </Flex>
+        <Hide below="md">
+          <DesktopMenu />
+        </Hide>
+        <Hide above="md">
+          <MobileMenu btnRef={btnRef} visible={visible} />
+        </Hide>
+      </Container>
     </Box>
   );
 };
