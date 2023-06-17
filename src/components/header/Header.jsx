@@ -15,10 +15,10 @@ const Header = () => {
 
   const navbarStyles = {
     width: "100%",
+    backgroundColor: "#FAF6F3",
     position: "fixed",
     top: "0px",
     transition: "0.2s linear",
-    backgroundColor: "#FFFFFF",
     borderBottom: "1px solid rgba(0, 0, 0, .1)",
     zIndex: "40",
     boxShadow: "0 2px 5px -1px rgba(0, 0, 0, .08)",
@@ -30,7 +30,7 @@ const Header = () => {
     setVisible(
       (prevScrollPos > currentScrollPos &&
         prevScrollPos - currentScrollPos > 70) ||
-        currentScrollPos < 90 ||
+        currentScrollPos < 85 ||
         cursorPosition
     );
 
@@ -49,7 +49,7 @@ const Header = () => {
     <Box
       py={2}
       data-cy="header"
-      style={{ ...navbarStyles, top: visible ? "0" : "-80px" }}
+      style={{ ...navbarStyles, top: visible ? "0" : "-85px" }}
     >
       <Container
         as={Stack}

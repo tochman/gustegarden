@@ -64,6 +64,7 @@ const CallsToAction = () => {
     {
       title: "Besök oss - på plats eller digitalt",
       text: "Våra djur är vana vid besökare och även om både fåren och getterna har horn, så är det tryggt att gå in i hagen och klappa dem. De gillar att kela och bli gosade med. Vi har även en egen YouTube kanal där du kan följa vårt arbete med djuren.",
+      target: "visit_us"
     },
   ];
   return (

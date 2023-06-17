@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
-import image_1 from "../../assets/lamm_1.jpg";
-import image_2 from "../../assets/lamm_hero_image.jpg";
-import image_3 from "../../assets/bengt_sommar_2.jpg";
+import image_1 from "../../assets/congo_sommar.jpg";
+import image_2 from "../../assets/bengt_sommar.jpg";
+import image_3 from "../../assets/chinook_sommar.jpg";
 import { Helmet } from "react-helmet";
 
 const sliderSettings = {
@@ -26,28 +26,19 @@ const sliderSettings = {
   slidesToScroll: 1,
 };
 
-const CaptionCarousel = () => {
+const GoatCarousel = () => {
   const [slider, setSlider] = useState(null);
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
   const cards = [
     {
-      title: "HÅLLBARHET",
-      text: "Respektfullt och försiktig djurhållning",
-      image: image_2,
-      mode: "dark",
-    },
-    {
-      title: "SMÅSKALIGHET",
-      text: "Djur och människor i balans",
-      image: image_1,
-      mode: "dark",
-    },
-    {
-      title: "ENGAGEMANG",
-      text: "Djurens bästa i fokus",
       image: image_3,
-      mode: "dark",
+    },
+    {
+      image: image_2,
+    },
+    {
+      image: image_1,
     },
   ];
 
@@ -101,43 +92,13 @@ const CaptionCarousel = () => {
           {cards.map((card, index) => (
             <Box
               key={index}
-              height={"6xl"}
+              height={"lg"}
+              width={"lg"}
               position="relative"
-              backgroundPosition="center"
-              backgroundRepeat="no-repeat"
-              backgroundSize="cover"
-              bgImage={`linear-gradient(rgba(255,255,255, 0.1), rgba(0, 0, 0, 0.1)), url(${card.image})`}
-            >
-              <Container
-                size="container.lg"
-                height={{ base: "600px", sm: "50vh" }}
-                position="relative"
-              >
-                <Stack
-                  spacing={6}
-                  w={{ base: "full" }}
-                  maxW={"lg"}
-                  position="absolute"
-                  bottom="0"
-                  transform="translate(0, -50%)"
-                >
-                  <Heading
-                    as={"h3"}
-                    color={card.mode === "light" ? "black" : "white"}
-                    fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
-                  >
-                    {card.title}
-                  </Heading>
-                  <Heading
-                    as={"h4"}
-                    mt={"-15px"}
-                    color={card.mode === "light" ? "black" : "white"}
-                  >
-                    {card.text}
-                  </Heading>
-                </Stack>
-              </Container>
-            </Box>
+              backgroundSize="100%"
+              backgroundPosition={'right center'}
+              bgImage={` url(${card.image})`}
+            ></Box>
           ))}
         </Slider>
       </Box>
@@ -145,4 +106,4 @@ const CaptionCarousel = () => {
   );
 };
 
-export default CaptionCarousel;
+export default GoatCarousel;
