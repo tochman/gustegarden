@@ -25,7 +25,7 @@ const Furs = () => {
   return (
     <>
       <FurForm isOpen={modalVisible} setModalVisible={setModalVisible} />
-      <Container maxW={"7xl"}>
+      <Container maxW={"7xl"} mt={20}>
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
