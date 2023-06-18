@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
-import image_1 from "../../assets/lamm_5.jpg";
-import image_2 from "../../assets/chinook_sommar.jpg";
-import image_3 from "../../assets/farm_view.jpg";
+import image_1 from "../../../assets/lamm_5.jpg";
+import image_2 from "../../../assets/chinook_sommar.jpg";
+import image_3 from "../../../assets/farm_view.jpg";
 import { Helmet } from "react-helmet";
 
 const sliderSettings = {
