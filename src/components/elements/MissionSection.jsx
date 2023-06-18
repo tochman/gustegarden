@@ -47,18 +47,24 @@ const MissionSection = () => {
             </Heading>
             <Box>
               <Content>
-                På Gustegården håller vi getter och får. Namnet kommer från den
-                storgård som en gång i tiden låg på den mark vi arrenderar.
+                På Gustegården delar vi vår kärlek till djur och hållbarhet
+                genom att ta hand om vår besättning av getter och får. Namnet
+                Gustegården är en hyllning till den storgård som en gång låg på
+                den mark vi nu arrenderar, som en påminnelse om byggdens rika
+                historia.
               </Content>
               <Content mt={4}>
-                Under September 2022 skrev vi ett avtal med nuvarande
-                arrendatorn och redan samma månad kunde våra första djur flytta
-                in.
+                Vår resa började i september 2022, när vi undertecknade ett
+                avtal med den nuvarande arrendatorn. Redan samma månad hade vi
+                glädjen att välkomna våra första djur till deras nya hem. Sedan
+                dess har vår besättning vuxit och vi har lärt oss mycket om att
+                ta hand om dessa fantastiska djur.
               </Content>
               <Content mt={4}>
-                Det här är vår hobby och arbetet kännetecknas av omtanke om
-                djuren, engagemang för hållbarhet och intresse att kontinuerligt
-                lära sig mer om djurhållning.
+                Denna hobby är vår passion, präglad av djurens välfärd,
+                hållbarhet och en ständig lust att lära. Här strävar vi efter
+                att bidra till en mer hållbar framtid för djur och natur. Följ
+                oss på denna resa - tillsammans kan vi göra en skillnad.
               </Content>
             </Box>
           </Stack>
