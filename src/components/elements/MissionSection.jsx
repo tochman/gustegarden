@@ -80,17 +80,27 @@ const MissionSection = () => {
             <Heading size={"lg"}>Gutefår</Heading>
             <Box>
               <Content>
-                Vår fårbesättning består av 8 st gutefår. Vi har 7 stycken
-                härliga tackor och en fantastisk bagge. Baggen heter Urban och
-                bland tackorna finns Ulla, Ursula, Maja, Aurora, Stina, Popeye,
-                och Mona Lisa.
+                På Gustegården är vi stolta över att vara hem för en vacker
+                besättning av gutefår, en lantras med rika och långa
+                traditioner. Vår flock består av sju fantastiska tackor och en
+                ståtlig bagge, alla med sina unika personligheter och distinkta
+                utseenden.
               </Content>
               <Content mt={4}>
-                Gutefåren härstammar från de gotländska utegångsfåren och är en
-                lantras med anor från flera tusen år tillbaka. På Gotland kallas
-                de traditionellt för hånnlambi (hornfår). Både baggar och tackor
-                har horn, men baggens horn är kraftigare än tackans. Färgen på
-                våra varierar i vitt, grått och svart.
+                Baggen, som heter Urban, imponerar med sina kraftfulla horn och
+                självklara auktoritet. Bland våra älskade tackor hittar du Ulla,
+                Ursula, Maja, Aurora, Stina, Popeye och Mona Lisa, var och en
+                bidrar till dynamiken i vår flock. Under våren har dessa tackor
+                gett oss gåvan av elva charmiga lamm, vilket har tillfört ny
+                energi och glädje till gården.
+              </Content>
+              <Content mt={4}>
+                Gutefåren har djupa rötter i den svenska historia. De härstammar
+                från de gotländska utegångsfåren och är en lantras med anor som
+                sträcker sig tusentals år tillbaka. Traditionellt kallas de för
+                hånnlambi, eller hornfår, på Gotland. Det är inte ovanligt att
+                både baggar och tackor har horn, men baggens horn är mer
+                framträdande.{" "}
               </Content>
             </Box>
           </Stack>
@@ -135,15 +145,20 @@ const MissionSection = () => {
             </Heading>
             <Box>
               <Content>
-                Våra getter heter Chinook och Congo. Det är två Afrikanska
-                Dvärggetter som vi adopterade under November 2022. De har fått
-                bo bland andra getter på Björsjöbacka Gård under vintern
-                2022/23.
+                I november 2022 utökade vi Gustegårdens familj med tre
+                afrikanska dvärggetter - Bengt, Chinook och Congo. Dessa
+                fascinerande djur har tillfört en ny dimension av glädje och
+                livlighet till vår verksamhet. Under vintern 2022/23
+                tillbringade de tid på Björsjöbacka Gård tillsammans med andra
+                getter. Nyligen flyttade de in hos oss på Gustegården, där de nu
+                frodas och skapar glädje varje dag.
               </Content>
               <Content mt={4}>
-                Den Afrikanska Dvärggeten kommer ursprungligen från Norra
-                Afrika. Idag finns den i hela världen men lever även fritt i
-                Afrika och Asien.
+                Afrikanska dvärggetter härstammar ursprungligen från Norra
+                Afrika men har spridits till alla hörn av världen. Idag kan de
+                ses i olika miljöer, både domesticerade och vilda, i såväl
+                Afrika som Asien. Nu har de hittat sitt hem hos oss, och vi ser
+                fram emot att dela deras fortsatta resa med dig.
               </Content>
             </Box>
           </Stack>
