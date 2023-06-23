@@ -12,9 +12,11 @@ import {
   useColorModeValue,
   List,
   ListItem,
+  Link,
   chakra,
   Divider,
 } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import CaptionCarousel from "./SocialCarousel";
 // import FurForm from "./FurForm";
@@ -90,13 +92,20 @@ const SocialPresentation = () => {
                 <Text fontSize={"xl"}>
                   Om du inte kan besöka oss personligen just nu, var inte
                   orolig! Du kan följa vår resa och se våra djurs vardagliga
-                  äventyr på sociala medier. Vi finns på YouTube och TikTok, där
-                  vi regelbundet delar uppdateringar, bilder och videoklipp.
-                  Detta ger dig möjlighet att följa med på vår resa när vi
-                  bygger upp verksamheten på Gustegården, oavsett var du är.
+                  äventyr på sociala medier. Vi finns på{" "}
+                  <Link href="https://www.youtube.com/channel/UCmepmsgeCgWmAHRMmP_mLBA" isExternal>
+                    YouTube <ExternalLinkIcon mb="8px" />
+                  </Link>{" "}
+                  och <Link href="https://www.tiktok.com/@gustegarden*/" isExternal>
+                    TikTok <ExternalLinkIcon mb="8px" />
+                  </Link>{" "}, där vi regelbundet delar uppdateringar, bilder och
+                  videoklipp. Detta ger dig möjlighet att följa med på vår resa
+                  när vi bygger upp verksamheten på Gustegården, oavsett var du
+                  är.
                 </Text>
               </VStack>
             </Stack>
+            {/* https://www.tiktok.com/@gustegarden*/}
 
             <Box mt={{ base: 0, sm: 8 }}>
               <Divider padding={4} mb={{ base: 0, sm: 8 }} />
